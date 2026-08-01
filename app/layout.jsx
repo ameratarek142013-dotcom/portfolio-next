@@ -1,7 +1,11 @@
+import { icons } from "lucide-react";
 import "./globals.css";
 
 export const metadata = {
   title: "Amira Tarek — Front-End Developer",
+  icons: {
+    icon: "/projects/fav.webp"
+  },
   description:
     "Amira Tarek — Front-end developer specializing in React.js and Next.js. Portfolio of projects, skills, and contact.",
 };
