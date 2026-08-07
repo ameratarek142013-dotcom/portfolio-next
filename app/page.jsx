@@ -476,6 +476,7 @@ export default function Portfolio() {
               <div className="w-full pt-6 mt-2 border-t border-border flex flex-wrap justify-end items-center gap-4">
                 <span className="text-faint text-[0.8rem] font-mono">Find me on</span>
                 <div className="flex gap-3">
+                 {/*added linkedin*/}
                   <a
                     href="https://www.linkedin.com/in/amera-tarek"
                     target="_blank"
