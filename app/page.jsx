@@ -478,7 +478,7 @@ export default function Portfolio() {
                 <div className="flex gap-3">
                  {/*added linkedin*/}
                   <a
-                    href="www.google.com"
+                    href="https://www.linkedin.com/in/amera-tarek"
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="LinkedIn (placeholder — replace with your profile link)"
