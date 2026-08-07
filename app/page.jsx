@@ -477,7 +477,7 @@ export default function Portfolio() {
                 <span className="text-faint text-[0.8rem] font-mono">Find me on</span>
                 <div className="flex gap-3">
                   <a
-                    href="#"
+                    href="https://www.linkedin.com/in/amera-tarek"
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="LinkedIn (placeholder — replace with your profile link)"
