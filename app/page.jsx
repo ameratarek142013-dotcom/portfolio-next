@@ -228,7 +228,24 @@ function Btn({ href, primary, children, ...rest }) {
 }
 
 export default function Portfolio() {
-  return (
+  const [showIntro, setShowIntro] = useState(true);
+
+useEffect(() => {
+  const timer = setTimeout(() => {
+    setShowIntro(false);
+  }, 1800);
+
+  return () => clearTimeout(timer);
+}, []);
+
+  return ( <>
+    {showIntro && (
+  <div className="fixed inset-0 z-[999] bg-bg flex items-center justify-center">
+    <h1 className="font-display text-[clamp(2.5rem,8vw,5rem)] font-bold text-ink animate-intro">
+      Amira <span className="text-gold">Tarek</span>
+    </h1>
+  </div>
+)}
     <div className="min-h-screen bg-bg text-ink [background-image:radial-gradient(1100px_600px_at_85%_-10%,rgba(94,234,212,0.08),transparent_60%),radial-gradient(900px_500px_at_-10%_20%,rgba(242,184,75,0.07),transparent_55%)]">
       {/* Nav */}
       <header className="sticky top-0 z-50 backdrop-blur-md bg-[rgba(20,18,31,0.75)] border-b border-border">
@@ -530,5 +547,5 @@ export default function Portfolio() {
         © {new Date().getFullYear()} Amira Tarek — built with React & Tailwind.
       </footer>
     </div>
-  );
+ </> );
 }
