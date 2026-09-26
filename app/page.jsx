@@ -10,6 +10,8 @@ import {
   Code2,
   FolderGit2,
   GraduationCap,
+   Menu,
+  X,
 } from "lucide-react";
 
 function GithubMark(props) {
@@ -179,7 +181,7 @@ function Reveal({ children }) {
   return (
     <div
       ref={ref}
-      className={`transition-all duration-700 ease-out ${
+      className={`transition-all duration-700 ease-out  ${
         inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
       }`}
     >
@@ -191,7 +193,7 @@ function Reveal({ children }) {
 function SectionHead({ icon, label, title }) {
   return (
     <div className="mb-9">
-      <div className="flex items-center gap-2 text-faint text-[13px] font-mono">
+      <div className="flex items-center gap-2 text-gray-300  font-mono">
         <span className="text-teal inline-flex">{icon}</span>
         {label}
       </div>
@@ -206,7 +208,7 @@ function NavLink({ href, icon, children }) {
   return (
     <a
       href={href}
-      className="inline-flex items-center gap-1.5 text-dim text-sm hover:text-teal transition-colors"
+      className="inline-flex items-center gap-1.5 text-[#F2B84B] text-xl hover:text-teal transition-colors"
     >
       {icon}
       {children}
@@ -216,7 +218,7 @@ function NavLink({ href, icon, children }) {
 
 function Btn({ href, primary, children, ...rest }) {
   const base =
-    "inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium border transition-transform hover:-translate-y-0.5";
+    "inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-md font-medium border transition-transform hover:-translate-y-0.5";
   const styles = primary
     ? "bg-gold text-[#1a1305] border-gold"
     : "border-border text-ink hover:border-teal hover:text-teal";
@@ -229,118 +231,239 @@ function Btn({ href, primary, children, ...rest }) {
 
 export default function Portfolio() {
   const [showIntro, setShowIntro] = useState(true);
+  const [introExit, setIntroExit] = useState(false);
+  const [startHero, setStartHero] = useState(false);
 
-useEffect(() => {
-  const timer = setTimeout(() => {
-    setShowIntro(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+  useEffect(() => {
+  const exitTimer = setTimeout(() => {
+    setIntroExit(true);
+    setStartHero(true); 
   }, 1800);
-
-  return () => clearTimeout(timer);
+  const removeTimer = setTimeout(() => setShowIntro(false), 2400);
+  return () => {
+    clearTimeout(exitTimer);
+    clearTimeout(removeTimer);
+  };
 }, []);
 
+  const firstName = "Amira".split("");
+  const lastName = "Tarek".split("");
+
   return ( <>
-    {showIntro && (
-  <div className="fixed inset-0 z-[999] bg-bg flex items-center justify-center">
-    <h1 className="font-display text-[clamp(2.5rem,8vw,5rem)] font-bold text-ink animate-intro">
-      Amira <span className="text-gold">Tarek</span>
-    </h1>
-  </div>
-)}
-    <div className="min-h-screen bg-bg text-ink [background-image:radial-gradient(1100px_600px_at_85%_-10%,rgba(94,234,212,0.08),transparent_60%),radial-gradient(900px_500px_at_-10%_20%,rgba(242,184,75,0.07),transparent_55%)]">
+  {showIntro && (
+        <div
+          className={`fixed inset-0 z-[999] bg-bg flex flex-col items-center justify-center overflow-hidden transition-all duration-500 ease-out ${
+            introExit ? "opacity-0 scale-105 pointer-events-none" : "opacity-100 scale-100"
+          }`}
+        >
+          <div className="absolute inset-0 [background-image:radial-gradient(700px_450px_at_50%_45%,rgba(94,234,212,0.14),transparent_70%)]" />
+
+          <h1 className="relative font-display text-[clamp(2.5rem,8vw,5rem)] font-bold text-ink flex flex-wrap justify-center">
+            {firstName.map((ch, i) => (
+              <span
+                key={`f-${i}`}
+                className="inline-block intro-letter"
+                style={{ animationDelay: `${i * 0.05}s` }}
+              >
+                {ch}
+              </span>
+            ))}
+            <span>&nbsp;</span>
+            {lastName.map((ch, i) => (
+              <span
+                key={`l-${i}`}
+                className="inline-block intro-letter text-gold"
+                style={{ animationDelay: `${(i + firstName.length + 1) * 0.05}s` }}
+              >
+                {ch}
+              </span>
+            ))}
+          </h1>
+
+          <div
+            className="relative mt-3 h-[2px] bg-gradient-to-r from-transparent via-teal to-transparent intro-line"
+            style={{ animationDelay: `${(firstName.length + lastName.length + 2) * 0.05}s` }}
+          />
+
+          <p
+            className="relative mt-4 font-mono text-gray-400  intro-caption"
+            style={{ animationDelay: `${(firstName.length + lastName.length + 4) * 0.05}s` }}
+          >
+            Front-End Developer
+          </p>
+
+          <style jsx>{`
+            @keyframes letterIn {
+              0% {
+                opacity: 0;
+                transform: translateY(26px);
+                filter: blur(6px);
+              }
+              100% {
+                opacity: 1;
+                transform: translateY(0);
+                filter: blur(0);
+              }
+            }
+            @keyframes lineIn {
+              0% {
+                width: 0;
+                opacity: 0;
+              }
+              100% {
+                width: 140px;
+                opacity: 1;
+              }
+            }
+            @keyframes captionIn {
+              0% {
+                opacity: 0;
+                transform: translateY(8px);
+              }
+              100% {
+                opacity: 1;
+                transform: translateY(0);
+              }
+            }
+            .intro-letter {
+              opacity: 0;
+              animation: letterIn 0.55s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+            }
+            .intro-line {
+              width: 0;
+              opacity: 0;
+              animation: lineIn 0.5s ease-out forwards;
+            }
+            .intro-caption {
+              opacity: 0;
+              animation: captionIn 0.5s ease-out forwards;
+            }
+          `}</style>
+        </div>
+      )}
+    <div className="min-h-screen bg-bg text-ink [background-image:radial-gradient(1100px_600px_at_85%_-10%,rgba(94,234,212,0.08),transparent_60%),radial-gradient(900px_500px_at_-10%_20%,rgba(242,184,75,0.07),transparent_55%)] ">
       {/* Nav */}
-      <header className="sticky top-0 z-50 backdrop-blur-md bg-[rgba(20,18,31,0.75)] border-b border-border">
-        <nav className="max-w-[1080px] mx-auto flex items-center justify-between px-6 py-4">
-          <div className="font-semibold text-[1.05rem]">
-            amira<span className="text-gold">.</span>dev
-          </div>
-          <div className="hidden sm:flex gap-6">
-            <NavLink href="#about" icon={<User size={15} />}>About</NavLink>
-            <NavLink href="#skills" icon={<Code2 size={15} />}>Skills</NavLink>
-            <NavLink href="#projects" icon={<FolderGit2 size={15} />}>Projects</NavLink>
-            <NavLink href="#education" icon={<GraduationCap size={15} />}>Education</NavLink>
-            <NavLink href="#contact" icon={<Mail size={15} />}>Contact</NavLink>
-          </div>
-        </nav>
-      </header>
+      
+<header className="sticky top-0 z-50 border-b border-border bg-[rgba(20,18,31,0.75)] backdrop-blur-md">
+  <nav className="relative mx-auto flex w-[90%] items-center justify-between px-6 py-6">
+    <a href="#" className="text-2xl font-bold">
+      amira<span className="text-gold">.</span>dev
+    </a>
 
-      <main className="max-w-[1080px] mx-auto px-6">
+    {/* روابط الشاشات الكبيرة */}
+    <div className="hidden items-center gap-6 lg:flex">
+      <NavLink href="#about" icon={<User size={20} />}>About</NavLink>
+      <NavLink href="#skills" icon={<Code2 size={20} />}>Skills</NavLink>
+      <NavLink href="#projects" icon={<FolderGit2 size={20} />}>Projects</NavLink>
+      <NavLink href="#education" icon={<GraduationCap size={20} />}>Education</NavLink>
+      <NavLink href="#contact" icon={<Mail size={20} />}>Contact</NavLink>
+    </div>
+
+    {/* زر قائمة الموبايل */}
+    <button
+      type="button"
+      className="flex h-10 w-10 items-center justify-center rounded-full border border-border text-ink lg:hidden"
+      onClick={() => setMenuOpen((open) => !open)}
+      aria-label={menuOpen ? "إغلاق القائمة" : "فتح القائمة"}
+      aria-expanded={menuOpen}
+      aria-controls="mobile-navigation"
+    >
+      {menuOpen ? <X size={21} /> : <Menu size={21} />}
+    </button>
+
+    {/* قائمة الموبايل */}
+    <div
+      id="mobile-navigation"
+      className={`absolute left-0 right-0 top-full overflow-hidden border-b border-border bg-[rgba(20,18,31,0.97)] shadow-lg transition-all duration-300 sm:hidden ${
+        menuOpen
+          ? "visible max-h-96 opacity-100"
+          : "invisible max-h-0 opacity-0"
+      }`}
+    >
+      <div className="flex flex-col px-6 py-2">
+        {[
+          { href: "#about", icon: <User size={18} />, label: "About" },
+          { href: "#skills", icon: <Code2 size={18} />, label: "Skills" },
+          { href: "#projects", icon: <FolderGit2 size={18} />, label: "Projects" },
+          { href: "#education", icon: <GraduationCap size={18} />, label: "Education" },
+          { href: "#contact", icon: <Mail size={18} />, label: "Contact" },
+        ].map((item) => (
+          <a
+            key={item.href}
+            href={item.href}
+            onClick={() => setMenuOpen(false)}
+            className="flex items-center gap-3 border-b border-border/50 py-3 text-[#F2B84B] transition-colors last:border-0 hover:text-teal"
+          >
+            {item.icon}
+            {item.label}
+          </a>
+        ))}
+      </div>
+    </div>
+  </nav>
+</header>
+
+      <main className="w-[90%] mx-auto px-6">
+        
         {/* Hero */}
-        <section className="py-16 md:py-24">
-          <div className="grid md:grid-cols-[1.05fr_0.95fr] gap-10 items-center">
-            <div>
-              <div className="inline-flex items-center gap-2 font-mono text-teal text-[0.85rem]">
-                <Code2 size={15} /> Front-end developer
-              </div>
-              <h1 className="font-display font-bold text-[clamp(2.1rem,5vw,3.2rem)] mt-2.5 leading-[1.15]">
-                Amira Tarek builds interfaces with{" "}
-                <span className="text-gold">React</span>.
-              </h1>
-              <p className="text-dim text-[1.05rem] mt-4 max-w-[460px]">
-                Front-end developer from Menoufia, Egypt, focused on React.js
-                and Next.js — turning designs into fast, responsive,
-                component-driven interfaces.
-              </p>
-              <div className="mt-7 flex gap-3.5 flex-wrap">
-                <Btn href="#projects" primary>
-                  View projects
-                </Btn>
-                <Btn href="#contact">Get in touch</Btn>
-              </div>
-            </div>
+<section className="py-16 md:py-24">
+  <div className="w-[90%] lg:w-[60%] mx-auto text-center">
+    <div
+      className="inline-flex items-center gap-2 font-mono text-teal  hero-fade"
+      style={{ animationDelay: "0.3s", animationPlayState: startHero ? "running" : "paused" }}
+    >
+      <Code2 size={20} /> Front-end developer
+    </div>
+    <h1
+      className="font-display font-bold text-[clamp(2.3rem,5vw,3.4rem)] mt-2.5 leading-[1.15] hero-fade"
+      style={{ animationDelay: "0.5s", animationPlayState: startHero ? "running" : "paused" }}
+    >
+      Amira Tarek builds interfaces with{" "}
+      <span className="text-gold">React</span>.
+    </h1>
+    <p
+      className="text-gray-300 text-lg mt-4 max-w-[460px] mx-auto hero-fade"
+      style={{ animationDelay: "0.7s", animationPlayState: startHero ? "running" : "paused" }}
+    >
+      Front-end developer, focused on React.js
+      and Next.js — turning designs into fast, responsive,
+      component-driven interfaces.
+    </p>
+    <div
+      className="mt-7 flex gap-3.5 flex-wrap justify-center hero-fade"
+      style={{ animationDelay: "0.9s", animationPlayState: startHero ? "running" : "paused" }}
+    >
+      <Btn href="#projects" primary>
+        View projects
+      </Btn>
+      <Btn href="#contact">Get in touch</Btn>
+    </div>
+  </div>
 
-            <div className="rounded-2xl overflow-hidden border border-border bg-surface shadow-[0_30px_60px_-20px_rgba(0,0,0,0.55)]">
-              <div className="flex items-center gap-2 px-4 py-3 bg-surface2 border-b border-border">
-                <span className="w-2.5 h-2.5 rounded-full bg-red" />
-                <span className="w-2.5 h-2.5 rounded-full bg-gold" />
-                <span className="w-2.5 h-2.5 rounded-full bg-teal" />
-                <span className="ml-2 text-faint text-[0.78rem] font-mono">
-                  Developer.jsx
-                </span>
-              </div>
-              <div className="p-5 text-[0.85rem] font-mono overflow-x-auto">
-                <div>
-                  <span className="text-pink">function</span>{" "}
-                  <span className="text-teal">Developer</span>() {"{"}
-                </div>
-                <div>
-                  &nbsp;&nbsp;<span className="text-pink">const</span> stack ={" "}
-                  [<span className="text-gold">'React'</span>,{" "}
-                  <span className="text-gold">'Next.js'</span>,{" "}
-                  <span className="text-gold">'TypeScript'</span>];
-                </div>
-                <div className="text-faint italic">
-                  &nbsp;&nbsp;{"// training at Route Academy"}
-                </div>
-                <div>
-                  &nbsp;&nbsp;<span className="text-pink">return</span> (
-                </div>
-                <div>
-                  &nbsp;&nbsp;&nbsp;&nbsp;&lt;
-                  <span className="text-sky">Amira</span>
-                </div>
-                <div>
-                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;role=
-                  <span className="text-gold">"Front-End Developer"</span>
-                </div>
-                <div>
-                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;stack={"{stack}"}
-                </div>
-                <div>&nbsp;&nbsp;&nbsp;&nbsp;/&gt;</div>
-                <div>&nbsp;&nbsp;);</div>
-                <div>
-                  {"}"}
-                  <span className="inline-block w-[7px] h-[1em] bg-teal align-text-bottom ml-0.5 animate-blink" />
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+  <style jsx>{`
+    @keyframes heroFadeIn {
+      0% {
+        opacity: 0;
+        transform: translateY(18px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .hero-fade {
+      opacity: 0;
+      animation: heroFadeIn 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+    }
+  `}</style>
+</section>
 
         {/* About */}
-        <section id="about" className="py-14 border-t border-border">
+        <section id="about" className="py-14 scroll-mt-20  border-t border-border">
           <Reveal>
-            <SectionHead icon={<User size={15} />} label="about" title="Who I am" />
-            <p className="text-dim max-w-[660px] text-[1rem]">
+            <SectionHead icon={<User size={20} />} label="about" title="Who I am" />
+            <p className="text-gray-400 max-w-5xl text-lg">
               I'm a front-end web developer graduate of the{" "}
               <strong className="text-ink">
                 Faculty of Computer and Information Sciences, Menoufia
@@ -357,18 +480,18 @@ useEffect(() => {
         </section>
 
         {/* Skills */}
-        <section id="skills" className="py-14 border-t border-border">
+        <section id="skills" className="py-14 scroll-mt-20 border-t border-border ">
           <Reveal>
-            <SectionHead icon={<Code2 size={15} />} label="skills" title="Toolkit" />
-            <div className="font-mono text-[0.85rem] text-faint bg-surface border border-border rounded-[10px] px-4.5 py-4 overflow-x-auto mb-6">
-              import {"{"} {skills.slice(0, -1).join(", ")} {"}"} from{" "}
+            <SectionHead icon={<Code2 size={20} />} label="skills" title="Toolkit" />
+            <div className="font-mono text-[0.85rem] px-2 text-gray-400 bg-surface border border-border rounded-[10px] px-4.5 py-4 overflow-x-auto mb-6">
+               import {"{"} {skills.slice(0, -1).join(", ")} {"}"} from{" "}
               <span className="text-gold">'amira/skills'</span>;
             </div>
             <div className="flex flex-wrap gap-2.5">
               {skills.map((s) => (
                 <span
                   key={s}
-                  className="px-4 py-2 rounded-full bg-surface border border-border text-[0.85rem] text-dim inline-flex items-center gap-2"
+                  className="px-4 py-2 rounded-full bg-surface border border-border text-sm text-gray-300 inline-flex items-center gap-2"
                 >
                   <span className="w-[7px] h-[7px] rounded-sm bg-teal" />
                   {s}
@@ -379,20 +502,20 @@ useEffect(() => {
         </section>
 
         {/* Projects */}
-        <section id="projects" className="py-14 border-t border-border">
+        <section id="projects" className="py-14 scroll-mt-20 border-t border-border">
           <Reveal>
             <SectionHead
-              icon={<FolderGit2 size={15} />}
+              icon={<FolderGit2 size={20} />}
               label="projects"
               title="Selected work"
             />
-            <div className="grid sm:grid-cols-3 gap-4">
+            <div className="grid sm:grid-cols-3 gap-8">
               {projects.map((p) => (
                 <article
                   key={p.title}
-                  className="bg-surface border border-border rounded-2xl overflow-hidden flex flex-col transition-all hover:border-teal hover:-translate-y-1"
+                  className="bg-surface border-2 border-border rounded-2xl overflow-hidden flex flex-col transition-all duration-300 hover:border-teal hover:-translate-y-3"
                 >
-                  <div className="relative w-full aspect-[5/3] bg-surface2">
+                  <div className="relative w-full aspect-[5/3] bg-surface2 hover:scale-110 transition-all duration-300">
                     <Image
                       src={p.image}
                       alt={`${p.title} cover`}
@@ -404,7 +527,7 @@ useEffect(() => {
                     <div className="font-display font-semibold text-[1.05rem]">
                       {p.title}
                     </div>
-                    <p className="text-dim text-[0.9rem] flex-1 m-0">
+                    <p className="text-gray-300 flex-1 m-0 line-clamp-3">
                       {p.desc}
                     </p>
                     <a
@@ -423,10 +546,10 @@ useEffect(() => {
         </section>
 
         {/* Education */}
-        <section id="education" className="py-14 border-t border-border">
+        <section id="education" className="py-14 scroll-mt-20 border-t border-border">
           <Reveal>
             <SectionHead
-              icon={<GraduationCap size={15} />}
+              icon={<GraduationCap size={20} />}
               label="education"
               title="Background"
             />
@@ -434,11 +557,11 @@ useEffect(() => {
               <div className="grid grid-cols-[16px_1fr] gap-4.5 pb-8">
                 <div className="w-3 h-3 rounded-full bg-gold mt-1.5" />
                 <div>
-                  <div className="font-mono text-faint text-[0.8rem]">2017</div>
-                  <div className="font-semibold">
+                  <div className="font-mono text-gray-400">2017</div>
+                  <div className="font-semibold text-lg">
                     B.Sc. in Computer and Information Sciences
                   </div>
-                  <div className="text-dim text-[0.9rem] mt-1">
+                  <div className="text-gray-300  mt-1">
                     Faculty of Computer and Information Sciences, Menoufia
                     University — Grade: Good
                   </div>
@@ -447,16 +570,16 @@ useEffect(() => {
               <div className="grid grid-cols-[16px_1fr] gap-4.5">
                 <div className="w-3 h-3 rounded-full bg-teal mt-1.5" />
                 <div>
-                  <div className="font-mono text-faint text-[0.8rem]">
+                  <div className="font-mono text-gray-400">
                     2026
                   </div>
-                  <div className="font-semibold">
+                  <div className="font-semibold text-lg">
                     Front-End Web Development Track{" "}
-                    <span className="text-[0.72rem] px-2.5 py-0.5 rounded-full ml-2 bg-teal/10 text-teal border border-teal/30">
+                    <span className="text-sm px-2.5 py-0.5 rounded-full ml-2 bg-teal/10 text-teal border border-teal/30">
                       Route Academy
                     </span>
                   </div>
-                  <div className="text-dim text-[0.9rem] mt-1">
+                  <div className="text-gray-300 mt-1">
                     HTML, CSS, JavaScript, TypeScript, Tailwind CSS, Bootstrap,
                     React.js, Next.js
                   </div>
@@ -467,14 +590,14 @@ useEffect(() => {
         </section>
 
         {/* Contact */}
-        <section id="contact" className="py-14 pb-24 border-t border-border">
+        <section id="contact" className="py-14 scroll-mt-20 pb-24 border-t border-border">
           <Reveal>
             <div className="bg-surface border border-border rounded-2xl p-9 flex flex-wrap items-center justify-between gap-6">
               <div>
                 <h3 className="font-display text-[1.3rem] font-semibold mb-1.5">
                   Let's build something.
                 </h3>
-                <p className="text-dim m-0">
+                <p className="text-gray-400 m-0">
                   Open to front-end / React &amp; Next.js roles — reach out
                   any time.
                 </p>
@@ -497,7 +620,7 @@ useEffect(() => {
               </div>
 
               <div className="w-full pt-6 mt-2 border-t border-border flex flex-wrap justify-end items-center gap-4">
-                <span className="text-faint text-[0.8rem] font-mono">Find me on</span>
+                <span className="text-gray-400 text-[0.8rem] font-mono">Find me on</span>
                 <div className="flex gap-3">
                  {/*added linkedin*/}
                   <a
@@ -543,8 +666,8 @@ useEffect(() => {
         </section>
       </main>
 
-      <footer className="border-t border-border py-6 text-faint text-[0.8rem] text-center font-mono">
-        © {new Date().getFullYear()} Amira Tarek — built with React & Tailwind.
+      <footer className="border-t border-border py-6 text-gray-300 text-md text-center font-mono">
+        © {new Date().getFullYear()} Amira Tarek — built with ❤️ React & Tailwind.
       </footer>
     </div>
  </> );
