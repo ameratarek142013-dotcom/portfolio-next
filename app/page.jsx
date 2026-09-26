@@ -69,6 +69,12 @@ const skills = [
 
 const projects = [
   {
+    title: "Tawasol",
+    desc: "A responsive social media web application built with React, featuring user authentication, post creation and sharing, likes, comments and replies, and user profiles. Integrated REST APIs to handle authentication and social interactions, with an interactive UI .",
+    url: "https://tawasol-roan.vercel.app/",
+    image: "/projects/tawasol.png",
+  },
+  {
     title: "Adasa",
     desc: "Interactive web experience built with React and Three.js, exploring 3D elements in the browser.",
     url: "https://adasa-react-three.vercel.app/",
