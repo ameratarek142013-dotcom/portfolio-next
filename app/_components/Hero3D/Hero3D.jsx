@@ -96,7 +96,7 @@ function Scene() {
       <ambientLight intensity={0.8} />
       <directionalLight position={[5, 5, 5]} intensity={1.5} />
 
-      <Float speed={1.2} rotationIntensity={0.08} floatIntensity={0.4}>
+      <Float speed={5} rotationIntensity={0.08} floatIntensity={.8}>
         <Laptop />
       </Float>
 

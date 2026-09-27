@@ -4,16 +4,22 @@ const Hero3D = dynamic(() => import("./_components/Hero3D/Hero3D"), { ssr: false
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import {
-  Mail,
-  Phone,
-  ArrowUpRight,
-  User,
-  Code2,
-  FolderGit2,
-  GraduationCap,
-  Menu,
-  X,
-} from "lucide-react";
+  SiHtml5,
+  SiCss,
+  SiJavascript,
+  SiTypescript,
+  SiReact,
+  SiNextdotjs,
+  SiTailwindcss,
+  SiBootstrap,
+  SiGit,
+  SiGithub,
+  SiAxios,
+  SiFigma,
+} from "react-icons/si";
+import { ArrowUpRight,Award, X , Boxes, Code2, FolderGit2, Globe, GraduationCap, HeartIcon, Mail, Menu, Phone, Route, Share2, Smartphone, User } from "lucide-react";
+
+
 
 function GithubMark(props) {
   return (
@@ -66,23 +72,33 @@ function InstagramMark(props) {
 }
 
 const skills = [
-  "HTML5",
-  "CSS3",
-  "JavaScript (ES6+)",
-  "TypeScript",
-  "OOP",
-  "React.js",
-  "Next.js",
-  "Tailwind CSS",
-  "Bootstrap",
-  "Git",
-  "GitHub",
-  "REST APIs",
-  "Axios, Fetch API",
-  "React Router",
-  "Context API",
-  "Figma",
-  "Responsive / mobile-first design",
+  { name: "HTML5", icon: SiHtml5, color: "#E34F26" },
+  { name: "CSS3", icon: SiCss, color: "#1572B6" },
+  { name: "JavaScript (ES6+)", icon: SiJavascript, color: "#d7c119" },
+  { name: "TypeScript", icon: SiTypescript, color: "#3178C6" },
+  { name: "OOP", icon: Boxes, color: "#0F766E" },
+  { name: "React.js", icon: SiReact, color: "#61DAFB" },
+  { name: "Next.js", icon: SiNextdotjs, color: "#000000" },
+  { name: "Tailwind CSS", icon: SiTailwindcss, color: "#06B6D4" },
+  { name: "Bootstrap", icon: SiBootstrap, color: "#7952B3" },
+  { name: "Git", icon: SiGit, color: "#F05032" },
+  { name: "GitHub", icon: SiGithub, color: "#181717" },
+  { name: "REST APIs", icon: Globe, color: "#0F766E" },
+  { name: "Axios, Fetch API", icon: SiAxios, color: "#5A29E4" },
+  { name: "React Router", icon: Route, color: "#CA4245" },
+  { name: "Context API", icon: Share2, color: "#61DAFB" },
+  { name: "Figma", icon: SiFigma, color: "#F24E1E" },
+  { name: "Responsive / mobile-first design", icon: Smartphone, color: "#A16207" },
+];
+
+const certificates = [
+  {
+    title: "Frontend Development Diploma",
+    issuer: "Route Academy",
+    year: " Sep 2026",
+    image: "/projects/certificates/route-certificate.png",
+    url: "/projects/certificates/route-certificate.png",
+  },
 ];
 
 const projects = [
@@ -226,7 +242,7 @@ function NavLink({ href, icon, children }) {
   return (
     <a
       href={href}
-      className="inline-flex items-center gap-1.5 text-2xl text-[#854D0E] transition-colors hover:text-[#0F766E]"
+      className="inline-flex items-center gap-1.5 font-bold  text-base xl:text-xl text-[#854D0E] transition-colors hover:text-[#0F766E]"
     >
       {icon}
       {children}
@@ -406,6 +422,9 @@ export default function Portfolio() {
               <NavLink href="#contact" icon={<Mail size={22} />}>
                 Contact
               </NavLink>
+              <NavLink href="#certificates" icon={<Award size={22} />}>
+  Certificates
+</NavLink>
             </div>
 
             {/* Mobile button */}
@@ -444,6 +463,7 @@ export default function Portfolio() {
                     label: "Education",
                   },
                   { href: "#contact", icon: <Mail size={20} />, label: "Contact" },
+                  { href: "#certificates", icon: <Award size={20} />, label: "Certificates" },
                 ].map((item) => (
                   <a
                     key={item.href}
@@ -584,21 +604,43 @@ export default function Portfolio() {
               />
 
               <div className="mb-6 overflow-x-auto rounded-[10px] border px-4 border-[#B8B3AE] bg-[#E7E4E1] px-4.5 py-4 font-mono text-sm text-[#57534E]">
-                import {"{"} {skills.slice(0, -1).join(", ")} {"}"} from{" "}
-                <span className="text-[#A16207]">'amira/skills'</span>;
-              </div>
+  import {"{"} {skills.slice(0, -1).map((s) => s.name).join(", ")} {"}"} from{" "}
+  <span className="text-[#A16207]">'amira/skills'</span>;
+</div>
 
-              <div className="flex flex-wrap gap-2.5">
-                {skills.map((skill) => (
-                  <span
-                    key={skill}
-                    className="inline-flex items-center gap-2 rounded-full border border-[#B8B3AE] bg-[#E7E4E1] px-4 py-2 text-base text-[#44403C]"
-                  >
-                    <span className="h-[8px] w-[8px] rounded-sm bg-[#0F766E]" />
-                    {skill}
-                  </span>
-                ))}
-              </div>
+              <div className="relative overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)]">
+  <div className="marquee-track flex w-max gap-3">
+    {[...skills, ...skills].map((skill, i) => {
+      const Icon = skill.icon;
+      return (
+        <span
+          key={`${skill.name}-${i}`}
+          className="inline-flex shrink-0 items-center gap-2 rounded-full border border-[#B8B3AE] bg-[#E7E4E1] px-4 py-3 text-lg text-[#44403C]"
+        >
+          <Icon size={18} style={{ color: skill.color }} />
+          {skill.name}
+        </span>
+      );
+    })}
+  </div>
+</div>
+
+<style jsx>{`
+  @keyframes marqueeScroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+  .marquee-track {
+    animation: marqueeScroll 28s linear infinite;
+  }
+  .marquee-track:hover {
+    animation-play-state: paused;
+  }
+`}</style>
             </Reveal>
           </section>
 
@@ -614,7 +656,7 @@ export default function Portfolio() {
                 title="Selected work"
               />
 
-              <div className="grid gap-8 sm:grid-cols-3">
+              <div className="grid gap-8 sm:grid-cols-2 xl:grid-cols-4 lg:grid-cols-3">
                 {projects.map((project) => (
                   <article
                     key={project.title}
@@ -697,6 +739,53 @@ export default function Portfolio() {
               </div>
             </Reveal>
           </section>
+
+          {/* Certificates */}
+<section
+  id="certificates"
+  className="scroll-mt-20 border-t border-[#B8B3AE] py-14"
+>
+  <Reveal>
+    <SectionHead
+      icon={<Award size={22} />}
+      label="certificates"
+      title="Certifications"
+    />
+
+    <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+  {certificates.map((cert) => (
+    <a
+      key={cert.title}
+      href={cert.url}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="group flex flex-col overflow-hidden rounded-2xl border-2 border-[#B8B3AE] bg-[#E7E4E1] transition-all duration-300 hover:-translate-y-1 hover:border-[#0F766E]"
+    >
+      <div className="relative aspect-[4/3] w-full overflow-hidden bg-white">
+        <Image
+          src={cert.image}
+          alt={`${cert.title} certificate`}
+          fill
+          className="object-contain p-3 transition-transform duration-300 group-hover:scale-105"
+        />
+      </div>
+
+      <div className="flex flex-col gap-1.5 p-5">
+        <div className="font-display text-lg font-semibold text-[#292524]">
+          {cert.title}
+        </div>
+        <div className="text-base text-[#57534E]">
+          {cert.issuer} — {cert.year}
+        </div>
+        <span className="mt-1 inline-flex w-fit items-center gap-1.5 text-base text-[#0F766E] group-hover:underline">
+          View certificate <ArrowUpRight size={16} />
+        </span>
+      </div>
+    </a>
+  ))}
+</div>
+  </Reveal>
+</section>
 
           {/* Contact */}
           <section
@@ -783,9 +872,11 @@ export default function Portfolio() {
           </section>
         </main>
 
-        <footer className="border-t border-[#B8B3AE] py-6 text-center font-mono text-base text-[#57534E]">
-          © {new Date().getFullYear()} Amira Tarek — built with ❤️ React &
-          Tailwind.
+        <footer className="border-t flex justify-center  border-[#B8B3AE] py-6 text-center font-mono text-base text-[#57534E]">
+          <span>© {new Date().getFullYear()} Amira Tarek — built with</span>
+          <HeartIcon className="animate-pulse mx-3 scale-110" fill="red" color="red"/>
+          <span>React &
+          Tailwind.</span>
         </footer>
       </div>
     </>
