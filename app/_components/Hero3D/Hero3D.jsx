@@ -14,15 +14,15 @@ function Laptop() {
   const { nodes, materials } = useGLTF("/models/mac-draco.glb");
   const { size } = useThree();
 
-  // تكبير اللابتوب حسب عرض الـCanvas
-  const scale = size.width < 480 ? 0.65 : size.width < 768 ? 0.5 : 1;
+  const isMobile = size.width < 640;
+  const scale = isMobile ? 0.9 : size.width < 768 ? 0.5 : 0.85;
 
   useFrame(({ clock }) => {
     if (!group.current) return;
 
     const t = clock.getElapsedTime();
-    group.current.rotation.y = Math.sin(t * 0.5) * 0.1;
-    group.current.position.y = -0.35 + Math.sin(t * 0.8) * 0.04;
+    group.current.rotation.y = Math.sin(t * 0.5) * 0.06;
+    group.current.position.y = -0.35 + Math.sin(t * 0.8) * 0.03;
   });
 
   return (
@@ -70,15 +70,18 @@ function Laptop() {
   );
 }
 
+
+
 function ResponsiveCamera({ isMobile }) {
   const { camera } = useThree();
 
   camera.position.set(
-    isMobile ? 3.5 : 4,
-    isMobile ? 7 : 8,
-    isMobile ? 11 : 10
+    isMobile ? 6 : 3,
+    isMobile ? 12 : 8,
+    isMobile ? 12 : 10
   );
-  camera.fov = isMobile ? 38 : 32;
+  camera.fov = isMobile ? 42 : 32;
+  camera.lookAt(0, 0, 0);
   camera.updateProjectionMatrix();
 
   return null;
@@ -114,10 +117,10 @@ export default function Hero3D() {
   return (
     <div className="relative h-[360px] w-full sm:h-[440px] md:h-[500px] lg:h-[560px]">
       <Canvas
-        camera={{ position: [5, 8, 10], fov: 32 }}
-        dpr={[1, 1.5]}
-        gl={{ antialias: true, alpha: true }}
-      >
+  camera={{ position: [5, 8, 10], fov: 32 }}
+  dpr={[1, 1.5]}
+  gl={{ antialias: true, alpha: true }}
+>
         <Suspense fallback={null}>
           <Scene />
         </Suspense>

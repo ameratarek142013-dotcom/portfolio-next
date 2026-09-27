@@ -463,7 +463,7 @@ export default function Portfolio() {
         <main className="mx-auto w-[90%] ">
           {/* Hero */}
           <section className="flex items-center justify-between mt-6 lg:mt-0 lg:mb-14">
-  <div className="grid w-full items-center gap-10 md:grid-cols-2">
+  <div className="grid w-full items-center gap-10 lg:grid-cols-2">
     {/* Left: text */}
     <div className=" text-center  md:text-left">
       <div
@@ -514,7 +514,7 @@ export default function Portfolio() {
 
     {/* Right: animated 3D laptop */}
     <div
-      className="hero-fade min-w-0"
+      className="hero-fade min-w-0 lg:mt-20"
       style={{
         animationDelay: "0.5s",
         animationPlayState: startHero ? "running" : "paused",
