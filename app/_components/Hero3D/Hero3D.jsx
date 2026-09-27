@@ -15,7 +15,7 @@ function Laptop() {
   const { size } = useThree();
 
   const isMobile = size.width < 640;
-  const scale = isMobile ? 0.9 : size.width < 768 ? 0.5 : 0.85;
+  const scale = isMobile ? 0.7 : size.width < 768 ? 0.5 : 0.6;
 
   useFrame(({ clock }) => {
     if (!group.current) return;
@@ -77,7 +77,7 @@ function ResponsiveCamera({ isMobile }) {
 
   camera.position.set(
     isMobile ? 6 : 3,
-    isMobile ? 12 : 8,
+    isMobile ? 14 : 8,
     isMobile ? 12 : 10
   );
   camera.fov = isMobile ? 42 : 32;
