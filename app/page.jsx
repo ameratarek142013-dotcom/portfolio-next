@@ -276,11 +276,12 @@ function SectionHead({ icon, label, title }) {
   );
 }
 
-function NavLink({ href, icon, children }) {
+function NavLink({ href, icon, children, active = false }) {
   return (
     <a
       href={href}
-      className="inline-flex items-center gap-1.5 rounded-full px-3 py-2 font-bold text-base xl:text-lg text-[var(--theme-accent-hover)] transition-all duration-200 hover:bg-[var(--theme-card)]/80 hover:text-[var(--theme-primary)] hover:shadow-sm"
+      aria-current={active ? "location" : undefined}
+      className={`inline-flex items-center gap-1.5 rounded-full px-3 py-2 font-bold text-base xl:text-lg transition-all duration-200 hover:bg-[var(--theme-card)]/80 hover:text-[var(--theme-primary)] hover:shadow-sm ${active ? "text-[#0D766E]" : "text-[var(--theme-accent-hover)]"}`}
     >
       {icon}
       {children}
@@ -346,6 +347,7 @@ export default function Portfolio() {
   const [introExit, setIntroExit] = useState(false);
   const [startHero, setStartHero] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("about");
 
   const [activeTab, setActiveTab] = useState("All");
   const [showAllProjects, setShowAllProjects] = useState(false);
@@ -370,6 +372,31 @@ export default function Portfolio() {
     return () => {
       clearTimeout(exitTimer);
       clearTimeout(removeTimer);
+    };
+  }, []);
+
+  useEffect(() => {
+    const sectionIds = ["about", "skills", "projects", "education", "contact", "certificates"];
+    const updateActiveSection = () => {
+      const marker = window.innerHeight * 0.35;
+      let currentSection = sectionIds[0];
+
+      sectionIds.forEach((id) => {
+        const section = document.getElementById(id);
+        if (section && section.getBoundingClientRect().top <= marker) {
+          currentSection = id;
+        }
+      });
+
+      setActiveSection((previous) => previous === currentSection ? previous : currentSection);
+    };
+
+    updateActiveSection();
+    window.addEventListener("scroll", updateActiveSection, { passive: true });
+    window.addEventListener("resize", updateActiveSection);
+    return () => {
+      window.removeEventListener("scroll", updateActiveSection);
+      window.removeEventListener("resize", updateActiveSection);
     };
   }, []);
 
@@ -514,22 +541,22 @@ export default function Portfolio() {
             </div>
 
             <div className="hidden items-center gap-6 lg:flex">
-              <NavLink href="#about" icon={<User size={22} />}>
+              <NavLink href="#about" icon={<User size={22} />} active={activeSection === "about"}>
                 About
               </NavLink>
-              <NavLink href="#skills" icon={<Code2 size={22} />}>
+              <NavLink href="#skills" icon={<Code2 size={22} />} active={activeSection === "skills"}>
                 Skills
               </NavLink>
-              <NavLink href="#projects" icon={<FolderGit2 size={22} />}>
+              <NavLink href="#projects" icon={<FolderGit2 size={22} />} active={activeSection === "projects"}>
                 Projects
               </NavLink>
-              <NavLink href="#education" icon={<GraduationCap size={22} />}>
+              <NavLink href="#education" icon={<GraduationCap size={22} />} active={activeSection === "education"}>
                 Education
               </NavLink>
-              <NavLink href="#contact" icon={<Mail size={22} />}>
+              <NavLink href="#contact" icon={<Mail size={22} />} active={activeSection === "contact"}>
                 Contact
               </NavLink>
-              <NavLink href="#certificates" icon={<Award size={22} />}>
+              <NavLink href="#certificates" icon={<Award size={22} />} active={activeSection === "certificates"}>
   Certificates
 </NavLink>
             </div>
@@ -578,7 +605,8 @@ export default function Portfolio() {
                     key={item.href}
                     href={item.href}
                     onClick={() => setMenuOpen(false)}
-                    className="flex items-center gap-2.5 border-b border-[var(--theme-border)]/60 py-3 text-lg text-[var(--theme-muted)] last:border-0 hover:text-[var(--theme-primary)]"
+                    aria-current={activeSection === item.href.slice(1) ? "location" : undefined}
+                    className={`flex items-center gap-2.5 border-b border-[var(--theme-border)]/60 py-3 text-lg last:border-0 hover:text-[var(--theme-primary)] ${activeSection === item.href.slice(1) ? "text-[#0D766E]" : "text-[var(--theme-muted)]"}`}
                   >
                     {item.icon}
                     {item.label}
@@ -591,7 +619,7 @@ export default function Portfolio() {
 
         <main className="mx-auto w-[90%]">
           {/* Hero */}
-          <section className="flex items-center justify-between mt-6 lg:mt-0 lg:mb-8">
+          <section className="hero-section flex items-center justify-between">
   <div className="grid w-full items-center gap-10 lg:grid-cols-2">
     {/* Left: text */}
     <div className=" text-center  md:text-left">
@@ -628,16 +656,16 @@ export default function Portfolio() {
       </p>
 
       <div
-        className="hero-fade mt-7 flex flex-col flex-wrap items-center gap-12 sm:flex-row md:justify-start md:gap-16"
+        className="hero-fade hero-cta mt-7 flex w-full flex-row flex-wrap items-center justify-center gap-6 sm:justify-start md:gap-16"
         style={{
           animationDelay: "0.9s",
           animationPlayState: startHero ? "running" : "paused",
         }}
       >
-        <Btn href="#projects">
+        <Btn href="#projects" className="hero-cta-button">
           View projects
         </Btn>
-        <Btn href="#contact">Get in touch</Btn>
+        <Btn href="#contact" className="hero-cta-button">Get in touch</Btn>
       </div>
     </div>
 
@@ -675,7 +703,7 @@ export default function Portfolio() {
           {/* About */}
           <section
             id="about"
-            className="scroll-mt-20 border-t border-[var(--theme-border)] py-14"
+            className="portfolio-section scroll-mt-20 py-14"
           >
             <Reveal>
               <SectionHead
@@ -684,18 +712,17 @@ export default function Portfolio() {
                 title="Who I am"
               />
               <p className="max-w-5xl text-xl text-[var(--theme-muted)]">
-                I'm a front-end web developer graduate of the{" "}
+                I'm a front-end web developer and a graduate of the{" "}
                 <strong className="text-[var(--theme-ink)]">
                   Faculty of Computer and Information Sciences, Menoufia
                   University
                 </strong>
-                , currently deepening my practical skills through a front-end
-                development track at{" "}
-                <strong className="text-[var(--theme-ink)]">Route Academy</strong>. I've
-                built projects ranging from static layouts to interactive React
-                and Next.js applications, and I enjoy turning a design or an
-                idea into an interface that actually works, on every screen
-                size.
+                . I completed the front-end development track at{" "}
+                <strong className="text-[var(--theme-ink)]">Route Academy</strong>{" "}
+                and earned my certificate. I've built projects ranging from
+                static layouts to interactive React and Next.js applications,
+                and I enjoy turning a design or an idea into an interface that
+                actually works, on every screen size.
               </p>
             </Reveal>
           </section>
@@ -703,7 +730,7 @@ export default function Portfolio() {
           {/* Skills */}
           <section
             id="skills"
-            className="scroll-mt-20 border-t border-[var(--theme-border)] py-14"
+            className="portfolio-section scroll-mt-20 py-14"
           >
             <Reveal>
               <SectionHead
@@ -758,7 +785,7 @@ export default function Portfolio() {
           {/* Projects */}
           <section
             id="projects"
-            className="scroll-mt-20 border-t border-[var(--theme-border)] py-14"
+            className="portfolio-section scroll-mt-20 py-14"
           >
             <Reveal>
               <SectionHead
@@ -784,7 +811,7 @@ export default function Portfolio() {
   ))}
 </div>
 
-              <div className="grid gap-x-6 gap-y-1 sm:grid-cols-2 xl:grid-cols-3">
+              <div className="grid gap-x-6 gap-y-12 sm:grid-cols-2 xl:grid-cols-3">
                 {visibleProjects.map((project) => (
                   <article
                     key={project.title}
@@ -837,7 +864,7 @@ export default function Portfolio() {
                 <button
                   type="button"
                   onClick={() => setShowAllProjects((show) => !show)}
-                  className="fancy-button"
+                  className="fancy-button show-all-projects-button"
                 >
                   <FancyButtonContent>
                     {showAllProjects ? "Show featured projects" : `View all ${projects.length} projects`}
@@ -850,7 +877,7 @@ export default function Portfolio() {
           {/* Education */}
           <section
             id="education"
-            className="scroll-mt-20 border-t border-[var(--theme-border)] py-14"
+            className="portfolio-section scroll-mt-20 py-14"
           >
             <Reveal>
               <SectionHead
@@ -897,7 +924,7 @@ export default function Portfolio() {
           {/* Certificates */}
 <section
   id="certificates"
-  className="scroll-mt-20 border-t border-[var(--theme-border)] py-14"
+  className="portfolio-section scroll-mt-20 py-14"
 >
   <Reveal>
     <SectionHead
@@ -944,7 +971,7 @@ export default function Portfolio() {
           {/* Contact */}
           <section
             id="contact"
-            className="scroll-mt-20 border-t border-[var(--theme-border)] pb-24 py-14"
+            className="portfolio-section scroll-mt-20 pb-24 py-14"
           >
             <Reveal>
               <div className="rounded-[2rem] border border-[var(--theme-border-soft)] bg-[var(--theme-card)] p-7 shadow-[0_20px_60px_-40px_var(--theme-card-shadow)] sm:p-9">
@@ -988,9 +1015,9 @@ export default function Portfolio() {
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label="LinkedIn"
-                      className="fancy-button"
+                      className="fancy-button social-icon-button social-linkedin"
                     >
-                      <FancyButtonContent><LinkedinMark /> LinkedIn</FancyButtonContent>
+                      <LinkedinMark aria-hidden="true" />
                     </a>
 
                     <a
@@ -998,9 +1025,9 @@ export default function Portfolio() {
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label="WhatsApp"
-                      className="fancy-button"
+                      className="fancy-button social-icon-button social-whatsapp"
                     >
-                      <FancyButtonContent><WhatsappMark /> WhatsApp</FancyButtonContent>
+                      <WhatsappMark aria-hidden="true" />
                     </a>
 
                     <a
@@ -1008,9 +1035,9 @@ export default function Portfolio() {
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label="Facebook"
-                      className="fancy-button"
+                      className="fancy-button social-icon-button social-facebook"
                     >
-                      <FancyButtonContent><FacebookMark /> Facebook</FancyButtonContent>
+                      <FacebookMark aria-hidden="true" />
                     </a>
 
                     <a
@@ -1018,9 +1045,9 @@ export default function Portfolio() {
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label="Instagram"
-                      className="fancy-button"
+                      className="fancy-button social-icon-button social-instagram"
                     >
-                      <FancyButtonContent><InstagramMark /> Instagram</FancyButtonContent>
+                      <InstagramMark aria-hidden="true" />
                     </a>
                   </div>
                 </div>
@@ -1029,15 +1056,17 @@ export default function Portfolio() {
           </section>
         </main>
 
-        <footer className="flex justify-center border-t border-[var(--theme-border-soft)] py-6 text-center font-mono text-base text-[var(--theme-copy)]">
-          <span>© {new Date().getFullYear()} Amera Tarek — built with</span>
-          <HeartIcon className="animate-pulse mx-3 scale-110" fill="red" color="red"/>
-          <span>React &
-          Tailwind.</span>
-          <span className="mx-2">·</span>
-          <a href="https://uiverse.io" target="_blank" rel="noopener noreferrer" className="text-[var(--theme-primary)] transition-colors hover:text-[var(--theme-accent-hover)] hover:underline">
-            UI inspiration: Uiverse
-          </a>
+        <footer className="portfolio-footer border-t border-[var(--theme-border-soft)] text-center font-mono text-sm text-[var(--theme-copy)] sm:text-base">
+          <div className="footer-content">
+            <span>© {new Date().getFullYear()} Amera Tarek</span>
+            <span className="footer-built">
+              Built with <HeartIcon className="animate-pulse h-4 w-4" fill="red" color="red" /> React &amp; Tailwind
+            </span>
+            <span aria-hidden="true">·</span>
+            <a href="https://uiverse.io" target="_blank" rel="noopener noreferrer" className="text-[var(--theme-primary)] transition-colors hover:text-[var(--theme-accent-hover)] hover:underline">
+              UI inspiration: Uiverse
+            </a>
+          </div>
         </footer>
       </div>
     </>

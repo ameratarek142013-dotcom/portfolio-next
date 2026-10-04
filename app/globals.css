@@ -478,7 +478,6 @@ body {
 
   .fancy-button:not(.fancy-menu-button):not(.social-icon-button) .fancy-text {
     gap: 0.35em;
-    padding-left: 1.65em;
     font-size: 1em;
   }
 
