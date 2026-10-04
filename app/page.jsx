@@ -103,90 +103,113 @@ const certificates = [
 
 const projects = [
   {
+    title: "FreshCart",
+    desc: "Responsive e-commerce application with Next.js, featuring product browsing, category and subcategory filtering, cart, wishlist, and checkout with cash and Visa (online) payment.",
+    url: "https://e-commerce-olive-one-15.vercel.app/",
+    image: "/projects/freshcart.png",
+    category: "Next.js & React"
+  },
+  {
     title: "Tawasol",
     desc: "A responsive social media web application built with React, featuring user authentication, post creation and sharing, likes, comments and replies, and user profiles. Integrated REST APIs to handle authentication and social interactions, with an interactive UI.",
     url: "https://tawasol-roan.vercel.app/",
     image: "/projects/tawasol.png",
+    category: "Next.js & React"
   },
   {
     title: "Adasa",
     desc: "Interactive web experience built with React and Three.js, exploring 3D elements in the browser.",
     url: "https://adasa-react-three.vercel.app/",
     image: "/projects/adasa.png",
+    category: "Next.js & React"
   },
   {
     title: "Quiz App",
     desc: "A quiz application with a dynamic, interactive UI and instant feedback on answers.",
     url: "https://ameratarek142013-dotcom.github.io/Quiz-App-Design/",
     image: "/projects/quiz.png",
+    category: "JavaScript",
   },
   {
     title: "Kanban Board",
     desc: "A drag-and-drop task management board for organizing work across custom columns.",
     url: "https://ameratarek142013-dotcom.github.io/kanban-Board/",
     image: "/projects/kanbann.png",
+    category: "JavaScript",
   },
   {
     title: "COSMOS",
     desc: "Space Explorer Dashboard, Real-time space data from NASA & SpaceDevs.",
     url: "https://ameratarek142013-dotcom.github.io/AmeraTarek-c47-sun-tu1-4-offline-assignment11-01064494778/#",
     image: "/projects/cosmos.png",
+    category: "JavaScript",
   },
   {
     title: "NutriPlan",
     desc: "A nutrition planning interface design, focused on clear layout for meal and diet tracking.",
     url: "https://ameratarek142013-dotcom.github.io/Nutriplan---Design/",
     image: "/projects/nutriplan.png",
+    category: "JavaScript",
   },
   {
     title: "ContactHub",
     desc: "A contact management web application for storing and organizing contact details.",
     url: "https://ameratarek142013-dotcom.github.io/contactHub/",
     image: "/projects/contacthub.png",
+    category: "JavaScript",
   },
   {
     title: "Dinner List",
     desc: "An interactive dinner / recipe list app for planning and organizing meals.",
     url: "https://ameratarek142013-dotcom.github.io/git-dinnerList/",
     image: "/projects/dinnerlist.png",
+    category: "JavaScript",
   },
   {
     title: "Mini Games",
     desc: "A small collection of interactive JavaScript browser games.",
     url: "https://ameratarek142013-dotcom.github.io/git-games/",
     image: "/projects/minigames.png",
+    category: "HTML & CSS", 
   },
   {
     title: "EliteHome",
     desc: "A real-estate style property listing interface, focused on clean browsing and layout.",
     url: "https://ameratarek142013-dotcom.github.io/git.eliteHome/",
     image: "/projects/elitehome.png",
+    category: "HTML & CSS", 
   },
   {
     title: "Money",
     desc: "A personal finance / budget tracking interface for logging and reviewing spending.",
     url: "https://ameratarek142013-dotcom.github.io/git-money/",
     image: "/projects/money.png",
+    category: "HTML & CSS", 
   },
   {
     title: "The UX Review",
     desc: "BRUTAL THOUGHTS BOLD IDEAS.",
     url: "https://ameratarek142013-dotcom.github.io/ux-blog/",
     image: "/projects/ux.png",
+    category: "HTML & CSS", 
   },
   {
     title: "DJI Mavic",
     desc: "Experience unparalleled flight performance with 8K camera capabilities, 40-minute flight time, and advanced AI obstacle avoidance technology.",
     url: "https://ameratarek142013-dotcom.github.io/git-dji/",
     image: "/projects/dji.png",
+    category: "HTML & CSS", 
   },
   {
     title: "Fitcore GYM",
     desc: "A FitCore gym transform your body and mind at premium fitness facility.",
     url: "https://ameratarek142013-dotcom.github.io/AmeraTarek-c47-sun-tu1-4-offline-assignment2-01064494778/",
     image: "/projects/gym.png",
+    category: "HTML & CSS", 
   },
 ];
+
+const tabs = ["All", "Next.js & React", "JavaScript", "HTML & CSS"];
 
 function Reveal({ children }) {
   const ref = useRef(null);
@@ -269,6 +292,13 @@ export default function Portfolio() {
   const [introExit, setIntroExit] = useState(false);
   const [startHero, setStartHero] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+
+  const [activeTab, setActiveTab] = useState("All");
+
+const visibleProjects =
+  activeTab === "All"
+    ? projects
+    : projects.filter((p) => p.category === activeTab);
 
   useEffect(() => {
     const exitTimer = setTimeout(() => {
@@ -644,6 +674,8 @@ export default function Portfolio() {
             </Reveal>
           </section>
 
+          
+
           {/* Projects */}
           <section
             id="projects"
@@ -655,9 +687,27 @@ export default function Portfolio() {
                 label="projects"
                 title="Selected work"
               />
+              <div className="mb-8 flex flex-wrap gap-3" role="tablist">
+  {tabs.map((tab) => (
+    <button
+      key={tab}
+      type="button"
+      role="tab"
+      aria-selected={activeTab === tab}
+      onClick={() => setActiveTab(tab)}
+      className={`rounded-full border px-5 py-2 text-base font-medium transition-colors ${
+        activeTab === tab
+          ? "border-[#A16207] bg-[#A16207] text-white"
+          : "border-[#B8B3AE] text-[#292524] hover:border-[#0F766E] hover:text-[#0F766E]"
+      }`}
+    >
+      {tab}
+    </button>
+  ))}
+</div>
 
               <div className="grid gap-8 sm:grid-cols-2 xl:grid-cols-4 lg:grid-cols-3">
-                {projects.map((project) => (
+                {visibleProjects.map((project) => (
                   <article
                     key={project.title}
                     className="flex flex-col overflow-hidden rounded-2xl border-2 border-[#B8B3AE] bg-[#E7E4E1] transition-all duration-300 hover:-translate-y-3 hover:border-[#0F766E]"
