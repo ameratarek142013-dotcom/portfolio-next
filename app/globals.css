@@ -90,25 +90,13 @@ body {
   transition: all 0.3s ease-in-out;
 }
 
-.fancy-button::before {
-  position: absolute;
-  top: 50%;
-  left: 1.5em;
-  width: 1.5625rem;
-  height: 2px;
-  background: #fff;
-  content: " ";
-  transform: translateY(-50%);
-  transform-origin: center;
-  transition: background 0.3s linear, width 0.3s linear;
-}
+
 
 .fancy-text {
   display: inline-flex;
   align-items: center;
   justify-content: flex-start;
   gap: 0.5em;
-  padding-left: 2em;
   color: #fff;
   font-size: 1.125em;
   line-height: 1.33333em;
@@ -161,7 +149,6 @@ body {
 
 .fancy-button:hover .fancy-text,
 .fancy-filter[aria-selected="true"] .fancy-text {
-  padding-left: 1.5em;
   color: #fff;
 }
 
