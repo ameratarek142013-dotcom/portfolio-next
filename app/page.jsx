@@ -106,6 +106,7 @@ const projects = [
     title: "FreshCart",
     desc: "Responsive e-commerce application with Next.js, featuring product browsing, category and subcategory filtering, cart, wishlist, and checkout with cash and Visa (online) payment.",
     url: "https://e-commerce-olive-one-15.vercel.app/",
+    githubUrl: "https://github.com/ameratarek142013-dotcom/e-commerce",
     image: "/projects/freshcart.png",
     category: "Next.js & React"
   },
@@ -113,6 +114,7 @@ const projects = [
     title: "Tawasol",
     desc: "A responsive social media web application built with React, featuring user authentication, post creation and sharing, likes, comments and replies, and user profiles. Integrated REST APIs to handle authentication and social interactions, with an interactive UI.",
     url: "https://tawasol-roan.vercel.app/",
+    githubUrl: "https://github.com/ameratarek142013-dotcom/Tawasol",
     image: "/projects/tawasol.png",
     category: "Next.js & React"
   },
@@ -120,6 +122,7 @@ const projects = [
     title: "Adasa",
     desc: "Interactive web experience built with React and Three.js, exploring 3D elements in the browser.",
     url: "https://adasa-react-three.vercel.app/",
+    githubUrl: "https://github.com/ameratarek142013-dotcom/Adasa-react",
     image: "/projects/adasa.png",
     category: "Next.js & React"
   },
@@ -127,6 +130,7 @@ const projects = [
     title: "Quiz App",
     desc: "A quiz application with a dynamic, interactive UI and instant feedback on answers.",
     url: "https://ameratarek142013-dotcom.github.io/Quiz-App-Design/",
+    githubUrl: "https://github.com/ameratarek142013-dotcom/Quiz-App-Design",
     image: "/projects/quiz.png",
     category: "JavaScript",
   },
@@ -134,6 +138,7 @@ const projects = [
     title: "Kanban Board",
     desc: "A drag-and-drop task management board for organizing work across custom columns.",
     url: "https://ameratarek142013-dotcom.github.io/kanban-Board/",
+    githubUrl: "https://github.com/ameratarek142013-dotcom/kanban-Board",
     image: "/projects/kanbann.png",
     category: "JavaScript",
   },
@@ -141,6 +146,7 @@ const projects = [
     title: "COSMOS",
     desc: "Space Explorer Dashboard, Real-time space data from NASA & SpaceDevs.",
     url: "https://ameratarek142013-dotcom.github.io/AmeraTarek-c47-sun-tu1-4-offline-assignment11-01064494778/#",
+    githubUrl: "https://github.com/ameratarek142013-dotcom/AmeraTarek-c47-sun-tu1-4-offline-assignment11-01064494778",
     image: "/projects/cosmos.png",
     category: "JavaScript",
   },
@@ -148,6 +154,7 @@ const projects = [
     title: "NutriPlan",
     desc: "A nutrition planning interface design, focused on clear layout for meal and diet tracking.",
     url: "https://ameratarek142013-dotcom.github.io/Nutriplan---Design/",
+    githubUrl: "https://github.com/ameratarek142013-dotcom/Nutriplan---Design",
     image: "/projects/nutriplan.png",
     category: "JavaScript",
   },
@@ -155,6 +162,7 @@ const projects = [
     title: "ContactHub",
     desc: "A contact management web application for storing and organizing contact details.",
     url: "https://ameratarek142013-dotcom.github.io/contactHub/",
+    githubUrl: "https://github.com/ameratarek142013-dotcom/contactHub",
     image: "/projects/contacthub.png",
     category: "JavaScript",
   },
@@ -162,6 +170,7 @@ const projects = [
     title: "Dinner List",
     desc: "An interactive dinner / recipe list app for planning and organizing meals.",
     url: "https://ameratarek142013-dotcom.github.io/git-dinnerList/",
+    githubUrl: "https://github.com/ameratarek142013-dotcom/git-dinnerList",
     image: "/projects/dinnerlist.png",
     category: "JavaScript",
   },
@@ -169,6 +178,7 @@ const projects = [
     title: "Mini Games",
     desc: "A small collection of interactive JavaScript browser games.",
     url: "https://ameratarek142013-dotcom.github.io/git-games/",
+    githubUrl: "https://github.com/ameratarek142013-dotcom/git-games",
     image: "/projects/minigames.png",
     category: "HTML & CSS", 
   },
@@ -176,6 +186,7 @@ const projects = [
     title: "EliteHome",
     desc: "A real-estate style property listing interface, focused on clean browsing and layout.",
     url: "https://ameratarek142013-dotcom.github.io/git.eliteHome/",
+    githubUrl: "https://github.com/ameratarek142013-dotcom/git.eliteHome",
     image: "/projects/elitehome.png",
     category: "HTML & CSS", 
   },
@@ -183,6 +194,7 @@ const projects = [
     title: "Money",
     desc: "A personal finance / budget tracking interface for logging and reviewing spending.",
     url: "https://ameratarek142013-dotcom.github.io/git-money/",
+    githubUrl: "https://github.com/ameratarek142013-dotcom/git-money",
     image: "/projects/money.png",
     category: "HTML & CSS", 
   },
@@ -190,6 +202,7 @@ const projects = [
     title: "The UX Review",
     desc: "BRUTAL THOUGHTS BOLD IDEAS.",
     url: "https://ameratarek142013-dotcom.github.io/ux-blog/",
+    githubUrl: "https://github.com/ameratarek142013-dotcom/ux-blog",
     image: "/projects/ux.png",
     category: "HTML & CSS", 
   },
@@ -197,6 +210,7 @@ const projects = [
     title: "DJI Mavic",
     desc: "Experience unparalleled flight performance with 8K camera capabilities, 40-minute flight time, and advanced AI obstacle avoidance technology.",
     url: "https://ameratarek142013-dotcom.github.io/git-dji/",
+    githubUrl: "https://github.com/ameratarek142013-dotcom/git-dji",
     image: "/projects/dji.png",
     category: "HTML & CSS", 
   },
@@ -204,6 +218,7 @@ const projects = [
     title: "Fitcore GYM",
     desc: "A FitCore gym transform your body and mind at premium fitness facility.",
     url: "https://ameratarek142013-dotcom.github.io/AmeraTarek-c47-sun-tu1-4-offline-assignment2-01064494778/",
+    githubUrl: "https://github.com/ameratarek142013-dotcom/AmeraTarek-c47-sun-tu1-4-offline-assignment2-01064494778",
     image: "/projects/gym.png",
     category: "HTML & CSS", 
   },
@@ -250,22 +265,23 @@ function Reveal({ children }) {
 function SectionHead({ icon, label, title }) {
   return (
     <div className="mb-9">
-      <div className="flex items-center gap-2 mb-6 font-mono text-lg text-[#57534E]">
-        <span className="inline-flex text-[#0F766E]">{icon}</span>
+      <div className="flex items-center gap-2 mb-6 font-mono text-lg text-[var(--theme-muted)]">
+        <span className="inline-flex text-[var(--theme-primary)]">{icon}</span>
         {label}
       </div>
-      <h2 className="mt-2 font-display text-[clamp(1.7rem,3.3vw,2.1rem)] font-semibold text-[#292524]">
+      <h2 className="mt-2 font-display text-[clamp(1.7rem,3.3vw,2.1rem)] font-semibold text-[var(--theme-ink)]">
         {title}
       </h2>
     </div>
   );
 }
 
-function NavLink({ href, icon, children }) {
+function NavLink({ href, icon, children, active = false }) {
   return (
     <a
       href={href}
-      className="inline-flex items-center gap-1.5 font-bold  text-base xl:text-xl text-[#854D0E] transition-colors hover:text-[#0F766E]"
+      aria-current={active ? "location" : undefined}
+      className={`inline-flex items-center gap-1.5 rounded-full px-3 py-2 font-bold text-base xl:text-lg transition-all duration-200 hover:bg-[var(--theme-card)]/80 hover:text-[var(--theme-primary)] hover:shadow-sm ${active ? "text-[#0D766E]" : "text-[var(--theme-accent-hover)]"}`}
     >
       {icon}
       {children}
@@ -273,16 +289,55 @@ function NavLink({ href, icon, children }) {
   );
 }
 
-function Btn({ href, primary, children, ...rest }) {
-  const base =
-    "inline-flex items-center gap-2 rounded-full border px-5 py-2.5 text-base font-medium transition-transform hover:-translate-y-0.5";
-  const styles = primary
-    ? "border-[#A16207] bg-[#A16207] text-white hover:border-[#854D0E] hover:bg-[#854D0E]"
-    : "border-[#B8B3AE] text-[#292524] hover:border-[#0F766E] hover:text-[#0F766E]";
+function UiverseButtonContent({ children }) {
+  return (
+    <>
+      <svg
+        className="button-cosm"
+        aria-hidden="true"
+        viewBox="0 0 256 256"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path d="M243.07324,157.43945c-1.2334-1.47949-23.18847-27.34619-60.46972-41.05859-1.67579-17.97412-8.25293-34.36328-18.93653-46.87158C149.41309,52.8208,128.78027,44,104,44,54.51074,44,22.10059,88.57715,20.74512,90.4751a3.99987,3.99987,0,0,0,6.50781,4.65234C27.5625,94.6958,58.68359,52,104,52c22.36816,0,40.89648,7.85107,53.584,22.70508,8.915,10.437,14.65625,23.9541,16.65528,38.894A133.54185,133.54185,0,0,0,136,108c-25.10742,0-46.09473,6.48486-60.69434,18.75391-12.65234,10.63379-19.91015,25.39355-19.91015,40.49463a43.61545,43.61545,0,0,0,12.69336,31.21923C76.98438,207.3208,89.40234,212,104,212c23.98047,0,44.37305-9.4668,58.97461-27.37744,12.74512-15.6333,20.05566-37.145,20.05566-59.01953,0-.1128-.001-.22559-.001-.33838,33.62988,13.48486,53.62207,36.96631,53.89746,37.2959a4.00015,4.00015,0,0,0,6.14648-5.1211ZM104,204c-27.89746,0-40.60449-19.05078-40.60449-36.75146C63.39551,142.56592,86.11621,116,136,116a124.37834,124.37834,0,0,1,38.97266,6.32617q.05712,1.63038.05761,3.27686C175.03027,177.07129,139.29785,204,104,204Z" />
+      </svg>
+      <span className="button-label">{children}</span>
+      <svg
+        className="highlight"
+        aria-hidden="true"
+        viewBox="0 0 144.75738 77.18431"
+        preserveAspectRatio="none"
+      >
+        <g transform="translate(-171.52826,-126.11624)">
+          <g fill="none" strokeWidth="17" strokeLinecap="round" strokeMiterlimit="10">
+            <path d="M180.02826,169.45123c0,0 12.65228,-25.55115 24.2441,-25.66863c6.39271,-0.06479 -5.89143,46.12943 4.90937,50.63857c10.22345,4.2681 24.14292,-52.38336 37.86455,-59.80493c3.31715,-1.79413 -5.35094,45.88889 -0.78872,58.34589c5.19371,14.18125 33.36934,-58.38221 36.43049,-56.91633c4.67078,2.23667 -0.06338,44.42744 5.22574,47.53647c6.04041,3.55065 19.87185,-20.77286 19.87185,-20.77286" />
+          </g>
+        </g>
+      </svg>
+    </>
+  );
+}
+
+function FancyButtonContent({ children }) {
+  return (
+    <>
+      <span className="top-key" aria-hidden="true" />
+      <span className="fancy-text">{children}</span>
+      <span className="bottom-key-1" aria-hidden="true" />
+      <span className="bottom-key-2" aria-hidden="true" />
+    </>
+  );
+}
+
+function Btn({ href, variant = "sketch", children, className = "", ...rest }) {
+  const buttonClass = variant === "sketch" ? "uiverse-button" : "fancy-button";
 
   return (
-    <a href={href} className={`${base} ${styles}`} {...rest}>
-      {children}
+    <a href={href} className={`${buttonClass} ${className}`.trim()} {...rest}>
+      {variant === "sketch" ? (
+        <UiverseButtonContent>{children}</UiverseButtonContent>
+      ) : (
+        <FancyButtonContent>{children}</FancyButtonContent>
+      )}
     </a>
   );
 }
@@ -292,21 +347,27 @@ export default function Portfolio() {
   const [introExit, setIntroExit] = useState(false);
   const [startHero, setStartHero] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("about");
 
   const [activeTab, setActiveTab] = useState("All");
+  const [showAllProjects, setShowAllProjects] = useState(false);
 
-const visibleProjects =
-  activeTab === "All"
-    ? projects
-    : projects.filter((p) => p.category === activeTab);
+  const filteredProjects =
+    activeTab === "All"
+      ? projects
+      : projects.filter((p) => p.category === activeTab);
+  const visibleProjects =
+    activeTab === "All" && !showAllProjects
+      ? filteredProjects.slice(0, 6)
+      : filteredProjects;
 
   useEffect(() => {
     const exitTimer = setTimeout(() => {
       setIntroExit(true);
       setStartHero(true);
-    }, 1800);
+    }, 700);
 
-    const removeTimer = setTimeout(() => setShowIntro(false), 2400);
+    const removeTimer = setTimeout(() => setShowIntro(false), 1200);
 
     return () => {
       clearTimeout(exitTimer);
@@ -314,26 +375,69 @@ const visibleProjects =
     };
   }, []);
 
-  const firstName = "Amira".split("");
+  useEffect(() => {
+    const sectionIds = ["about", "skills", "projects", "education", "contact", "certificates"];
+    const updateActiveSection = () => {
+      const marker = window.innerHeight * 0.35;
+      let currentSection = sectionIds[0];
+
+      sectionIds.forEach((id) => {
+        const section = document.getElementById(id);
+        if (section && section.getBoundingClientRect().top <= marker) {
+          currentSection = id;
+        }
+      });
+
+      setActiveSection((previous) => previous === currentSection ? previous : currentSection);
+    };
+
+    updateActiveSection();
+    window.addEventListener("scroll", updateActiveSection, { passive: true });
+    window.addEventListener("resize", updateActiveSection);
+    return () => {
+      window.removeEventListener("scroll", updateActiveSection);
+      window.removeEventListener("resize", updateActiveSection);
+    };
+  }, []);
+
+  const firstName = "Amera".split("");
   const lastName = "Tarek".split("");
 
   return (
     <>
+      <svg aria-hidden="true" className="uiverse-filters" width="0" height="0">
+        <filter id="handDrawnNoise">
+          <feTurbulence result="noise" numOctaves="8" baseFrequency="0.1" type="fractalNoise" />
+          <feDisplacementMap yChannelSelector="G" xChannelSelector="R" scale="3" in2="noise" in="SourceGraphic" />
+        </filter>
+        <filter id="handDrawnNoise2">
+          <feTurbulence result="noise" numOctaves="8" baseFrequency="0.1" seed="1010" type="fractalNoise" />
+          <feDisplacementMap yChannelSelector="G" xChannelSelector="R" scale="3" in2="noise" in="SourceGraphic" />
+        </filter>
+        <filter id="handDrawnNoiset">
+          <feTurbulence result="noise" numOctaves="8" baseFrequency="0.1" type="fractalNoise" />
+          <feDisplacementMap yChannelSelector="G" xChannelSelector="R" scale="6" in2="noise" in="SourceGraphic" />
+        </filter>
+        <filter id="handDrawnNoiset2">
+          <feTurbulence result="noise" numOctaves="8" baseFrequency="0.1" seed="1010" type="fractalNoise" />
+          <feDisplacementMap yChannelSelector="G" xChannelSelector="R" scale="6" in2="noise" in="SourceGraphic" />
+        </filter>
+      </svg>
       {showIntro && (
         <div
-          className={`fixed inset-0 z-[999] flex flex-col items-center justify-center overflow-hidden bg-[#D6D3D1] transition-all duration-500 ease-out ${
+          className={`fixed inset-0 z-[999] flex flex-col items-center justify-center overflow-hidden bg-[var(--theme-bg)] transition-all duration-500 ease-out ${
             introExit
               ? "pointer-events-none scale-105 opacity-0"
               : "scale-100 opacity-100"
           }`}
         >
-          <div className="absolute inset-0 [background-image:radial-gradient(700px_450px_at_50%_45%,rgba(15,118,110,0.12),transparent_70%)]" />
+          <div className="absolute inset-0 [background-image:radial-gradient(700px_450px_at_50%_45%,var(--theme-primary-tint),transparent_70%)]" />
 
-          <h1 className="relative flex flex-wrap justify-center font-display text-[clamp(2.8rem,8.5vw,5.4rem)] font-bold text-[#292524]">
+          <h1 className="relative flex flex-wrap justify-center font-display text-[clamp(2.8rem,8.5vw,5.4rem)] font-bold text-[var(--theme-ink)]">
             {firstName.map((ch, i) => (
               <span
                 key={`f-${i}`}
-                className="intro-letter inline-block text-[#75706A]"
+                className="intro-letter inline-block text-[var(--theme-subtle)]"
                 style={{ animationDelay: `${i * 0.05}s` }}
               >
                 {ch}
@@ -343,7 +447,7 @@ const visibleProjects =
             {lastName.map((ch, i) => (
               <span
                 key={`l-${i}`}
-                className="intro-letter inline-block text-[#A16207]"
+                className="intro-letter inline-block text-[var(--theme-accent)]"
                 style={{
                   animationDelay: `${(i + firstName.length + 1) * 0.05}s`,
                 }}
@@ -354,14 +458,14 @@ const visibleProjects =
           </h1>
 
           <div
-            className="intro-line relative mt-3 h-[2px] bg-gradient-to-r from-transparent via-[#0F766E] to-transparent"
+            className="intro-line relative mt-3 h-[2px] bg-gradient-to-r from-transparent via-[var(--theme-primary)] to-transparent"
             style={{
               animationDelay: `${(firstName.length + lastName.length + 2) * 0.05}s`,
             }}
           />
 
           <p
-            className="intro-caption relative mt-4 font-mono text-lg text-[#292524]"
+            className="intro-caption relative mt-4 font-mono text-lg text-[var(--theme-ink)]"
             style={{
               animationDelay: `${(firstName.length + lastName.length + 4) * 0.05}s`,
             }}
@@ -419,9 +523,9 @@ const visibleProjects =
         </div>
       )}
 
-      <div className="min-h-screen bg-[#D6D3D1] text-lg text-[#292524] [background-image:radial-gradient(1100px_600px_at_85%_-10%,rgba(15,118,110,0.08),transparent_60%),radial-gradient(900px_500px_at_-10%_20%,rgba(161,98,7,0.07),transparent_55%)]">
+      <div className="min-h-screen bg-[var(--theme-bg)] text-lg text-[var(--theme-ink)] [background-image:radial-gradient(1100px_600px_at_85%_-10%,var(--theme-primary-wash),transparent_60%),radial-gradient(900px_500px_at_-10%_20%,var(--theme-accent-wash),transparent_55%)]">
         {/* Navigation */}
-        <header className="sticky top-0 z-50 border-b border-[#B8B3AE] bg-[#D6D3D1]/90 backdrop-blur-md">
+        <header className="sticky top-0 z-50 border-b border-[var(--theme-border-soft)] bg-[var(--theme-bg)]/90 backdrop-blur-md">
           <nav className="relative mx-auto flex w-[90%] items-center justify-between px-6 py-2">
             {/* Logo + Name */}
             <div className="flex items-center gap-2">
@@ -431,28 +535,28 @@ const visibleProjects =
                 alt="Logo"
               />
 
-              <a href="#" className="text-4xl font-mono font-black text-[#75706A]">
+              <a href="#" className="text-4xl font-mono font-black text-[var(--theme-subtle)]">
                 mira
               </a>
             </div>
 
             <div className="hidden items-center gap-6 lg:flex">
-              <NavLink href="#about" icon={<User size={22} />}>
+              <NavLink href="#about" icon={<User size={22} />} active={activeSection === "about"}>
                 About
               </NavLink>
-              <NavLink href="#skills" icon={<Code2 size={22} />}>
+              <NavLink href="#skills" icon={<Code2 size={22} />} active={activeSection === "skills"}>
                 Skills
               </NavLink>
-              <NavLink href="#projects" icon={<FolderGit2 size={22} />}>
+              <NavLink href="#projects" icon={<FolderGit2 size={22} />} active={activeSection === "projects"}>
                 Projects
               </NavLink>
-              <NavLink href="#education" icon={<GraduationCap size={22} />}>
+              <NavLink href="#education" icon={<GraduationCap size={22} />} active={activeSection === "education"}>
                 Education
               </NavLink>
-              <NavLink href="#contact" icon={<Mail size={22} />}>
+              <NavLink href="#contact" icon={<Mail size={22} />} active={activeSection === "contact"}>
                 Contact
               </NavLink>
-              <NavLink href="#certificates" icon={<Award size={22} />}>
+              <NavLink href="#certificates" icon={<Award size={22} />} active={activeSection === "certificates"}>
   Certificates
 </NavLink>
             </div>
@@ -460,19 +564,21 @@ const visibleProjects =
             {/* Mobile button */}
             <button
               type="button"
-              className="flex h-11 w-11 items-center justify-center rounded-full border border-[#B8B3AE] text-[#292524] lg:hidden"
+              className="fancy-button fancy-menu-button lg:hidden"
               onClick={() => setMenuOpen((open) => !open)}
               aria-label={menuOpen ? "إغلاق القائمة" : "فتح القائمة"}
               aria-expanded={menuOpen}
               aria-controls="mobile-navigation"
             >
+              <span className="top-key" aria-hidden="true" />
               {menuOpen ? <X size={23} /> : <Menu size={23} />}
+              <span className="bottom-key-2" aria-hidden="true" />
             </button>
 
             {/* Mobile menu */}
             <div
               id="mobile-navigation"
-              className={`absolute left-0 right-0 top-full overflow-hidden border-b border-[#B8B3AE] bg-[#E7E4E1] shadow-lg transition-all duration-300 lg:hidden ${
+              className={`absolute left-0 right-0 top-full overflow-hidden border-b border-[var(--theme-border)] bg-[var(--theme-surface)] shadow-lg transition-all duration-300 lg:hidden ${
                 menuOpen
                   ? "visible max-h-96 opacity-100"
                   : "invisible max-h-0 opacity-0"
@@ -499,7 +605,8 @@ const visibleProjects =
                     key={item.href}
                     href={item.href}
                     onClick={() => setMenuOpen(false)}
-                    className="flex items-center gap-2.5 border-b border-[#B8B3AE]/60 py-3 text-lg text-[#57534E] last:border-0 hover:text-[#0F766E]"
+                    aria-current={activeSection === item.href.slice(1) ? "location" : undefined}
+                    className={`flex items-center gap-2.5 border-b border-[var(--theme-border)]/60 py-3 text-lg last:border-0 hover:text-[var(--theme-primary)] ${activeSection === item.href.slice(1) ? "text-[#0D766E]" : "text-[var(--theme-muted)]"}`}
                   >
                     {item.icon}
                     {item.label}
@@ -510,14 +617,14 @@ const visibleProjects =
           </nav>
         </header>
 
-        <main className="mx-auto w-[90%] ">
+        <main className="mx-auto w-[90%]">
           {/* Hero */}
-          <section className="flex items-center justify-between mt-6 lg:mt-0 lg:mb-14">
+          <section className="hero-section flex items-center justify-between">
   <div className="grid w-full items-center gap-10 lg:grid-cols-2">
     {/* Left: text */}
     <div className=" text-center  md:text-left">
       <div
-        className="hero-fade inline-flex items-center gap-2 font-mono text-lg text-[#0F766E]"
+        className="hero-fade inline-flex items-center gap-2 font-mono text-lg text-[var(--theme-primary)]"
         style={{
           animationDelay: "0.3s",
           animationPlayState: startHero ? "running" : "paused",
@@ -533,12 +640,12 @@ const visibleProjects =
           animationPlayState: startHero ? "running" : "paused",
         }}
       >
-        <span className="text-[#75706A]">Amera Tarek</span> builds interfaces
-        with <span className="text-[#A16207]">React</span>.
+        <span className="text-[var(--theme-subtle)]">Amera Tarek</span> builds interfaces
+        with <span className="text-[var(--theme-accent)]">React</span>.
       </h1>
 
       <p
-        className="hero-fade mx-auto mt-4 max-w-[480px] text-xl text-[#57534E] md:mx-0"
+        className="hero-fade mx-auto mt-4 max-w-[480px] text-xl text-[var(--theme-muted)] md:mx-0"
         style={{
           animationDelay: "0.7s",
           animationPlayState: startHero ? "running" : "paused",
@@ -549,22 +656,22 @@ const visibleProjects =
       </p>
 
       <div
-        className="hero-fade mt-7 flex flex-wrap justify-center gap-3.5 md:justify-start"
+        className="hero-fade hero-cta mt-7 flex w-full flex-row flex-wrap items-center justify-center gap-6 sm:justify-start md:gap-16"
         style={{
           animationDelay: "0.9s",
           animationPlayState: startHero ? "running" : "paused",
         }}
       >
-        <Btn href="#projects" primary>
+        <Btn href="#projects" className="hero-cta-button">
           View projects
         </Btn>
-        <Btn href="#contact">Get in touch</Btn>
+        <Btn href="#contact" className="hero-cta-button">Get in touch</Btn>
       </div>
     </div>
 
     {/* Right: animated 3D laptop */}
     <div
-      className="hero-fade min-w-0 lg:mt-20"
+      className="hero-fade min-w-0 overflow-hidden rounded-[2rem] border border-[var(--theme-border-soft)] bg-[radial-gradient(ellipse_at_50%_45%,var(--theme-primary-tint),rgba(255,255,255,0.58)_58%,rgba(255,255,255,0.25))] shadow-[0_24px_70px_-48px_var(--theme-hero-shadow)] lg:mt-8"
       style={{
         animationDelay: "0.5s",
         animationPlayState: startHero ? "running" : "paused",
@@ -596,7 +703,7 @@ const visibleProjects =
           {/* About */}
           <section
             id="about"
-            className="scroll-mt-20 border-t border-[#B8B3AE] py-14"
+            className="portfolio-section scroll-mt-20 py-14"
           >
             <Reveal>
               <SectionHead
@@ -604,19 +711,18 @@ const visibleProjects =
                 label="about"
                 title="Who I am"
               />
-              <p className="max-w-5xl text-xl text-[#57534E]">
-                I'm a front-end web developer graduate of the{" "}
-                <strong className="text-[#292524]">
+              <p className="max-w-5xl text-xl text-[var(--theme-muted)]">
+                I'm a front-end web developer and a graduate of the{" "}
+                <strong className="text-[var(--theme-ink)]">
                   Faculty of Computer and Information Sciences, Menoufia
                   University
                 </strong>
-                , currently deepening my practical skills through a front-end
-                development track at{" "}
-                <strong className="text-[#292524]">Route Academy</strong>. I've
-                built projects ranging from static layouts to interactive React
-                and Next.js applications, and I enjoy turning a design or an
-                idea into an interface that actually works, on every screen
-                size.
+                . I completed the front-end development track at{" "}
+                <strong className="text-[var(--theme-ink)]">Route Academy</strong>
+                and earned my certificate. I've built projects ranging from
+                static layouts to interactive React and Next.js applications,
+                and I enjoy turning a design or an idea into an interface that
+                actually works, on every screen size.
               </p>
             </Reveal>
           </section>
@@ -624,7 +730,7 @@ const visibleProjects =
           {/* Skills */}
           <section
             id="skills"
-            className="scroll-mt-20 border-t border-[#B8B3AE] py-14"
+            className="portfolio-section scroll-mt-20 py-14"
           >
             <Reveal>
               <SectionHead
@@ -633,9 +739,9 @@ const visibleProjects =
                 title="Toolkit"
               />
 
-              <div className="mb-6 overflow-x-auto rounded-[10px] border px-4 border-[#B8B3AE] bg-[#E7E4E1] px-4.5 py-4 font-mono text-sm text-[#57534E]">
+              <div className="mb-6 overflow-x-auto rounded-[10px] border px-4 border-[var(--theme-border)] bg-[var(--theme-surface)] px-4.5 py-4 font-mono text-sm text-[var(--theme-muted)]">
   import {"{"} {skills.slice(0, -1).map((s) => s.name).join(", ")} {"}"} from{" "}
-  <span className="text-[#A16207]">'amira/skills'</span>;
+  <span className="text-[var(--theme-accent)]">'amira/skills'</span>;
 </div>
 
               <div className="relative overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)]">
@@ -645,7 +751,7 @@ const visibleProjects =
       return (
         <span
           key={`${skill.name}-${i}`}
-          className="inline-flex shrink-0 items-center gap-2 rounded-full border border-[#B8B3AE] bg-[#E7E4E1] px-4 py-3 text-lg text-[#44403C]"
+          className="inline-flex shrink-0 items-center gap-2 rounded-full border border-[var(--theme-border)] bg-[var(--theme-surface)] px-4 py-3 text-lg text-[var(--theme-muted)]"
         >
           <Icon size={18} style={{ color: skill.color }} />
           {skill.name}
@@ -679,7 +785,7 @@ const visibleProjects =
           {/* Projects */}
           <section
             id="projects"
-            className="scroll-mt-20 border-t border-[#B8B3AE] py-14"
+            className="portfolio-section scroll-mt-20 py-14"
           >
             <Reveal>
               <SectionHead
@@ -687,66 +793,91 @@ const visibleProjects =
                 label="projects"
                 title="Selected work"
               />
-              <div className="mb-8 flex flex-wrap gap-3" role="tablist">
+          <div className="mb-8 flex flex-wrap gap-3" role="tablist">
   {tabs.map((tab) => (
     <button
       key={tab}
       type="button"
       role="tab"
       aria-selected={activeTab === tab}
-      onClick={() => setActiveTab(tab)}
-      className={`rounded-full border px-5 py-2 text-base font-medium transition-colors ${
-        activeTab === tab
-          ? "border-[#A16207] bg-[#A16207] text-white"
-          : "border-[#B8B3AE] text-[#292524] hover:border-[#0F766E] hover:text-[#0F766E]"
-      }`}
+      onClick={() => {
+        setActiveTab(tab);
+        setShowAllProjects(false);
+      }}
+      className="fancy-button fancy-filter"
     >
-      {tab}
+      <FancyButtonContent>{tab}</FancyButtonContent>
     </button>
   ))}
 </div>
 
-              <div className="grid gap-8 sm:grid-cols-2 xl:grid-cols-4 lg:grid-cols-3">
+              <div className="grid gap-x-6 gap-y-12 sm:grid-cols-2 xl:grid-cols-3">
                 {visibleProjects.map((project) => (
                   <article
                     key={project.title}
-                    className="flex flex-col overflow-hidden rounded-2xl border-2 border-[#B8B3AE] bg-[#E7E4E1] transition-all duration-300 hover:-translate-y-3 hover:border-[#0F766E]"
+                    className="uiverse-card group mt-6 flex h-full flex-col rounded-xl bg-[var(--theme-card)] bg-clip-padding text-[var(--theme-ink)] shadow-md"
                   >
-                    <div className="relative aspect-[5/3] w-full overflow-hidden bg-[#D6D3D1]">
+                    <div className="relative mx-4 -mt-6 h-60 overflow-hidden rounded-xl bg-gradient-to-r from-[var(--theme-primary)] to-[var(--theme-primary-light)] text-white shadow-lg shadow-[var(--theme-primary-card-shadow)]">
                       <Image
                         src={project.image}
                         alt={`${project.title} cover`}
                         fill
                         className="object-cover transition-transform duration-300 hover:scale-110"
                       />
+                      <span className="absolute bottom-3 left-3 rounded-full border border-white/30 bg-[color:var(--theme-ink)]/75 px-3 py-1 font-mono text-xs text-white shadow-sm backdrop-blur-sm">
+                        {project.category}
+                      </span>
                     </div>
 
-                    <div className="flex flex-1 flex-col gap-2.5 p-5">
-                      <div className="font-display text-lg font-semibold text-[#292524]">
+                    <div className="flex flex-1 flex-col gap-2.5 p-6">
+                      <div className="font-display text-xl font-semibold leading-snug text-[var(--theme-ink)]">
                         {project.title}
                       </div>
-                      <p className="m-0 line-clamp-3 flex-1 text-base text-[#57534E]">
+                      <p className="m-0 line-clamp-3 flex-1 text-base leading-relaxed text-[var(--theme-copy)]">
                         {project.desc}
                       </p>
-                      <a
-                        href={project.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex w-fit items-center gap-1.5 text-base text-[#0F766E] hover:underline"
-                      >
-                        View live <ArrowUpRight size={17} />
-                      </a>
+                    </div>
+                    <div className="flex flex-wrap items-center justify-between gap-3 p-6 pt-0">
+                        <a
+                          href={project.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="fancy-button"
+                        >
+                          <FancyButtonContent>View live <ArrowUpRight size={17} /></FancyButtonContent>
+                        </a>
+                        {project.githubUrl && (
+                          <a
+                            href={project.githubUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="fancy-button"
+                          >
+                            <FancyButtonContent>View code <GithubMark /></FancyButtonContent>
+                          </a>
+                        )}
                     </div>
                   </article>
                 ))}
               </div>
+              {activeTab === "All" && projects.length > 6 && (
+                <button
+                  type="button"
+                  onClick={() => setShowAllProjects((show) => !show)}
+                  className="fancy-button show-all-projects-button"
+                >
+                  <FancyButtonContent>
+                    {showAllProjects ? "Show featured projects" : `View all ${projects.length} projects`}
+                  </FancyButtonContent>
+                </button>
+              )}
             </Reveal>
           </section>
 
           {/* Education */}
           <section
             id="education"
-            className="scroll-mt-20 border-t border-[#B8B3AE] py-14"
+            className="portfolio-section scroll-mt-20 py-14"
           >
             <Reveal>
               <SectionHead
@@ -757,13 +888,13 @@ const visibleProjects =
 
               <div>
                 <div className="grid grid-cols-[16px_1fr] gap-4.5 pb-8">
-                  <div className="mt-1.5 h-3 w-3 rounded-full bg-[#A16207]" />
+                  <div className="mt-1.5 h-3 w-3 rounded-full bg-[var(--theme-accent)]" />
                   <div>
-                    <div className="font-mono text-lg text-[#57534E]">2017</div>
-                    <div className="text-xl font-semibold text-[#292524]">
+                    <div className="font-mono text-lg text-[var(--theme-muted)]">2017</div>
+                    <div className="text-xl font-semibold text-[var(--theme-ink)]">
                       B.Sc. in Computer and Information Sciences
                     </div>
-                    <div className="mt-1 text-lg text-[#57534E]">
+                    <div className="mt-1 text-lg text-[var(--theme-muted)]">
                       Faculty of Computer and Information Sciences, Menoufia
                       University — Grade: Good
                     </div>
@@ -771,16 +902,16 @@ const visibleProjects =
                 </div>
 
                 <div className="grid grid-cols-[16px_1fr] gap-4.5">
-                  <div className="mt-1.5 h-3 w-3 rounded-full bg-[#0F766E]" />
+                  <div className="mt-1.5 h-3 w-3 rounded-full bg-[var(--theme-primary)]" />
                   <div>
-                    <div className="font-mono text-lg text-[#57534E]">2026</div>
-                    <div className="text-xl font-semibold text-[#292524]">
+                    <div className="font-mono text-lg text-[var(--theme-muted)]">2026</div>
+                    <div className="text-xl font-semibold text-[var(--theme-ink)]">
                       Front-End Web Development Track{" "}
-                      <span className="ml-2 rounded-full border border-[#0F766E]/30 bg-[#0F766E]/10 px-2.5 py-0.5 text-base text-[#0F766E]">
+                      <span className="ml-2 rounded-full border border-[color:var(--theme-primary)]/30 bg-[var(--theme-primary)]/10 px-2.5 py-0.5 text-base text-[var(--theme-primary)]">
                         Route Academy
                       </span>
                     </div>
-                    <div className="mt-1 text-lg text-[#57534E]">
+                    <div className="mt-1 text-lg text-[var(--theme-muted)]">
                       HTML, CSS, JavaScript, TypeScript, Tailwind CSS,
                       Bootstrap, React.js, Next.js
                     </div>
@@ -793,7 +924,7 @@ const visibleProjects =
           {/* Certificates */}
 <section
   id="certificates"
-  className="scroll-mt-20 border-t border-[#B8B3AE] py-14"
+  className="portfolio-section scroll-mt-20 py-14"
 >
   <Reveal>
     <SectionHead
@@ -809,9 +940,9 @@ const visibleProjects =
       href={cert.url}
       target="_blank"
       rel="noopener noreferrer"
-      className="group flex flex-col overflow-hidden rounded-2xl border-2 border-[#B8B3AE] bg-[#E7E4E1] transition-all duration-300 hover:-translate-y-1 hover:border-[#0F766E]"
+      className="group flex flex-col overflow-hidden rounded-2xl border-2 border-[var(--theme-border)] bg-[var(--theme-surface)] transition-all duration-300 hover:-translate-y-1 hover:border-[var(--theme-primary)]"
     >
-      <div className="relative aspect-[4/3] w-full overflow-hidden bg-white">
+      <div className="relative aspect-[4/3] w-full overflow-hidden bg-[var(--theme-card)]">
         <Image
           src={cert.image}
           alt={`${cert.title} certificate`}
@@ -821,13 +952,13 @@ const visibleProjects =
       </div>
 
       <div className="flex flex-col gap-1.5 p-5">
-        <div className="font-display text-lg font-semibold text-[#292524]">
+        <div className="font-display text-lg font-semibold text-[var(--theme-ink)]">
           {cert.title}
         </div>
-        <div className="text-base text-[#57534E]">
+        <div className="text-base text-[var(--theme-muted)]">
           {cert.issuer} — {cert.year}
         </div>
-        <span className="mt-1 inline-flex w-fit items-center gap-1.5 text-base text-[#0F766E] group-hover:underline">
+        <span className="mt-1 inline-flex w-fit items-center gap-1.5 text-base text-[var(--theme-primary)] group-hover:underline">
           View certificate <ArrowUpRight size={16} />
         </span>
       </div>
@@ -840,50 +971,53 @@ const visibleProjects =
           {/* Contact */}
           <section
             id="contact"
-            className="scroll-mt-20 border-t border-[#B8B3AE] pb-24 py-14"
+            className="portfolio-section scroll-mt-20 pb-24 py-14"
           >
             <Reveal>
-              <div className="flex flex-wrap items-center justify-between gap-6 rounded-2xl border border-[#B8B3AE] bg-[#E7E4E1] p-9">
+              <div className="rounded-[2rem] border border-[var(--theme-border-soft)] bg-[var(--theme-card)] p-7 shadow-[0_20px_60px_-40px_var(--theme-card-shadow)] sm:p-9">
+                <div className="flex flex-wrap items-center justify-between gap-6">
                 <div>
-                  <h3 className="mb-1.5 font-display text-2xl font-semibold text-[#292524]">
+                  <h3 className="mb-1.5 font-display text-2xl font-semibold text-[var(--theme-ink)]">
                     Let's build something.
                   </h3>
-                  <p className="m-0 text-lg text-[#57534E]">
+                  <p className="m-0 text-lg text-[var(--theme-muted)]">
                     Open to front-end / React &amp; Next.js roles — reach out
                     any time.
                   </p>
                 </div>
 
-                <div className="flex flex-wrap gap-3">
-                  <Btn href="mailto:ameratarek142013@gmail.com" primary>
+                <div className="flex flex-wrap gap-12">
+                  <Btn href="mailto:ameratarek142013@gmail.com" variant="fancy">
                     <Mail size={18} /> Email me
                   </Btn>
-                  <Btn href="tel:+201064494778">
-                    <Phone size={18} /> phone
+                  <Btn href="tel:+201064494778" variant="fancy">
+                    <Phone size={18} /> Call me
                   </Btn>
                   <Btn
                     href="https://github.com/ameratarek142013-dotcom"
+                    variant="fancy"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
                     <GithubMark /> GitHub
                   </Btn>
                 </div>
+                </div>
 
-                <div className="mt-2 flex w-full flex-wrap items-center justify-end gap-4 border-t border-[#B8B3AE] pt-6">
-                  <span className="font-mono text-base text-[#57534E]">
+                <div className="mt-2 flex w-full flex-wrap items-center justify-end gap-4 border-t border-[var(--theme-border)] pt-6">
+                  <span className="font-mono text-base text-[var(--theme-muted)]">
                     Find me on
                   </span>
 
-                  <div className="flex gap-3">
+                  <div className="flex flex-wrap gap-3">
                     <a
                       href="https://www.linkedin.com/in/amera-tarek"
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label="LinkedIn"
-                      className="flex h-10 w-10 items-center justify-center rounded-full border border-[#B8B3AE] text-[#57534E] transition-colors hover:border-[#0A66C2] hover:text-[#0A66C2]"
+                      className="fancy-button social-icon-button social-linkedin"
                     >
-                      <LinkedinMark />
+                      <LinkedinMark aria-hidden="true" />
                     </a>
 
                     <a
@@ -891,9 +1025,9 @@ const visibleProjects =
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label="WhatsApp"
-                      className="flex h-10 w-10 items-center justify-center rounded-full border border-[#B8B3AE] text-[#57534E] transition-colors hover:border-green-700 hover:text-green-700"
+                      className="fancy-button social-icon-button social-whatsapp"
                     >
-                      <WhatsappMark />
+                      <WhatsappMark aria-hidden="true" />
                     </a>
 
                     <a
@@ -901,9 +1035,9 @@ const visibleProjects =
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label="Facebook"
-                      className="flex h-10 w-10 items-center justify-center rounded-full border border-[#B8B3AE] text-[#57534E] transition-colors hover:border-blue-700 hover:text-blue-700"
+                      className="fancy-button social-icon-button social-facebook"
                     >
-                      <FacebookMark />
+                      <FacebookMark aria-hidden="true" />
                     </a>
 
                     <a
@@ -911,9 +1045,9 @@ const visibleProjects =
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label="Instagram"
-                      className="flex h-10 w-10 items-center justify-center rounded-full border border-[#B8B3AE] text-[#57534E] transition-colors hover:border-fuchsia-700 hover:text-fuchsia-700"
+                      className="fancy-button social-icon-button social-instagram"
                     >
-                      <InstagramMark />
+                      <InstagramMark aria-hidden="true" />
                     </a>
                   </div>
                 </div>
@@ -922,11 +1056,17 @@ const visibleProjects =
           </section>
         </main>
 
-        <footer className="border-t flex justify-center  border-[#B8B3AE] py-6 text-center font-mono text-base text-[#57534E]">
-          <span>© {new Date().getFullYear()} Amira Tarek — built with</span>
-          <HeartIcon className="animate-pulse mx-3 scale-110" fill="red" color="red"/>
-          <span>React &
-          Tailwind.</span>
+        <footer className="portfolio-footer border-t border-[var(--theme-border-soft)] text-center font-mono text-sm text-[var(--theme-copy)] sm:text-base">
+          <div className="footer-content">
+            <span>© {new Date().getFullYear()} Amera Tarek</span>
+            <span className="footer-built">
+              Built with <HeartIcon className="animate-pulse h-4 w-4" fill="red" color="red" /> React &amp; Tailwind
+            </span>
+            <span aria-hidden="true">·</span>
+            <a href="https://uiverse.io" target="_blank" rel="noopener noreferrer" className="text-[var(--theme-primary)] transition-colors hover:text-[var(--theme-accent-hover)] hover:underline">
+              UI inspiration: Uiverse
+            </a>
+          </div>
         </footer>
       </div>
     </>

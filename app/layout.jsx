@@ -2,12 +2,9 @@ import { icons } from "lucide-react";
 import "./globals.css";
 
 export const metadata = {
-  title: "Amira Tarek — Front-End Developer",
-  icons: {
-    icon: "/projects/logo.jpg"
-  },
+  title: "Amera Tarek — Front-End Developer",
   description:
-    "Amira Tarek — Front-end developer specializing in React.js and Next.js. Portfolio of projects, skills, and contact.",
+    "Amera Tarek — Front-end developer specializing in React.js and Next.js. Portfolio of projects, skills, and contact.",
 };
 
 export default function RootLayout({ children }) {
@@ -21,7 +18,7 @@ export default function RootLayout({ children }) {
           rel="stylesheet"
         />
       </head>
-      <body className="font-sans bg-bg text-ink antialiased">{children}</body>
+      <body className="font-sans antialiased">{children}</body>
     </html>
   );
 }

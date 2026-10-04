@@ -115,7 +115,7 @@ function Scene() {
 
 export default function Hero3D() {
   return (
-    <div className="relative h-[360px] w-full sm:h-[440px] md:h-[500px] lg:h-[560px]">
+    <div className="relative h-[300px] w-full sm:h-[360px] md:h-[400px] lg:h-[440px]">
       <Canvas
   camera={{ position: [5, 8, 10], fov: 32 }}
   dpr={[1, 1.5]}
